@@ -2,6 +2,32 @@
 
 {% block title %}JSON Validator - Результаты{% endblock %}
 
+{% block head %}
+<style>
+    .highlight-error {
+        background-color: #ffcccc;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+    
+    .recommendations-container {
+        background-color: #fff3cd;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .differences-container {
+        background-color: #f8d7da;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="row">
     <div class="col-12 mb-4">

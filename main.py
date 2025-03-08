@@ -20,6 +20,9 @@ os.makedirs("reference_json", exist_ok=True)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
+# Путь к эталонному файлу
+REFERENCE_FILE_PATH = os.path.join("reference_json", "example.json")
+
 # Функция для сравнения JSON файлов
 def compare_json_files(user_json: Dict[str, Any], reference_json: Dict[str, Any]) -> Dict[str, Any]:
     result = {
@@ -73,22 +76,24 @@ def compare_json_files(user_json: Dict[str, Any], reference_json: Dict[str, Any]
     find_differences(user_json, reference_json)
     return result
 
-# Получение списка доступных эталонных JSON файлов
-def get_reference_files() -> List[str]:
-    if not os.path.exists("reference_json"):
-        return []
-    return [f for f in os.listdir("reference_json") if f.endswith(".json")]
-
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    reference_files = get_reference_files()
-    return templates.TemplateResponse("index.html", {"request": request, "reference_files": reference_files})
+    # Проверяем наличие эталонного файла
+    if not os.path.exists(REFERENCE_FILE_PATH):
+        return templates.TemplateResponse(
+            "index.html", 
+            {
+                "request": request, 
+                "error": "Эталонный файл не найден. Пожалуйста, загрузите эталонный файл."
+            }
+        )
+    
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/validate", response_class=HTMLResponse)
 async def validate_json(
     request: Request,
-    user_file: UploadFile = File(...),
-    reference_file: str = Form(...)
+    user_file: UploadFile = File(...)
 ):
     # Проверяем, что загруженный файл - JSON
     if not user_file.filename.endswith(".json"):
@@ -101,13 +106,12 @@ async def validate_json(
         )
     
     # Проверяем, что эталонный файл существует
-    reference_path = os.path.join("reference_json", reference_file)
-    if not os.path.exists(reference_path):
+    if not os.path.exists(REFERENCE_FILE_PATH):
         return templates.TemplateResponse(
             "result.html", 
             {
                 "request": request, 
-                "error": "Выбранный эталонный файл не существует"
+                "error": "Эталонный файл не найден. Пожалуйста, загрузите эталонный файл."
             }
         )
     
@@ -117,7 +121,7 @@ async def validate_json(
         user_json = json.loads(user_content)
         
         # Читаем эталонный JSON
-        with open(reference_path, "r", encoding="utf-8") as f:
+        with open(REFERENCE_FILE_PATH, "r", encoding="utf-8") as f:
             reference_json = json.load(f)
         
         # Сравниваем файлы
@@ -131,7 +135,7 @@ async def validate_json(
                 "user_json": json.dumps(user_json, indent=2, ensure_ascii=False),
                 "reference_json": json.dumps(reference_json, indent=2, ensure_ascii=False),
                 "filename": user_file.filename,
-                "reference_filename": reference_file
+                "reference_filename": "example.json"
             }
         )
     
@@ -152,15 +156,9 @@ async def validate_json(
             }
         )
 
-@app.get("/admin", response_class=HTMLResponse)
-async def admin_panel(request: Request):
-    reference_files = get_reference_files()
-    return templates.TemplateResponse("admin.html", {"request": request, "reference_files": reference_files})
-
 @app.post("/upload-reference")
 async def upload_reference(
-    reference_file: UploadFile = File(...),
-    file_name: str = Form(...)
+    reference_file: UploadFile = File(...)
 ):
     if not reference_file.filename.endswith(".json"):
         raise HTTPException(status_code=400, detail="Файл должен быть в формате JSON")
@@ -171,14 +169,10 @@ async def upload_reference(
         json.loads(content)
         
         # Сохраняем файл
-        file_path = os.path.join("reference_json", file_name)
-        if not file_name.endswith(".json"):
-            file_path += ".json"
-            
-        with open(file_path, "wb") as f:
+        with open(REFERENCE_FILE_PATH, "wb") as f:
             f.write(content)
             
-        return {"success": True, "message": f"Файл {file_name} успешно загружен"}
+        return {"success": True, "message": "Эталонный файл успешно загружен"}
     
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Ошибка при разборе JSON файла")
