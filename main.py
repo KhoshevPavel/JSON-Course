@@ -84,7 +84,7 @@ async def index(request: Request):
             "index.html", 
             {
                 "request": request, 
-                "error": "Эталонный файл не найден. Пожалуйста, загрузите эталонный файл."
+                "error": "Эталонный файл не найден. Пожалуйста, обратитесь к преподавателю."
             }
         )
     
@@ -111,7 +111,7 @@ async def validate_json(
             "result.html", 
             {
                 "request": request, 
-                "error": "Эталонный файл не найден. Пожалуйста, загрузите эталонный файл."
+                "error": "Эталонный файл не найден. Пожалуйста, обратитесь к преподавателю."
             }
         )
     
@@ -155,29 +155,6 @@ async def validate_json(
                 "error": f"Произошла ошибка: {str(e)}"
             }
         )
-
-@app.post("/upload-reference")
-async def upload_reference(
-    reference_file: UploadFile = File(...)
-):
-    if not reference_file.filename.endswith(".json"):
-        raise HTTPException(status_code=400, detail="Файл должен быть в формате JSON")
-    
-    try:
-        # Проверяем, что загруженный файл - валидный JSON
-        content = await reference_file.read()
-        json.loads(content)
-        
-        # Сохраняем файл
-        with open(REFERENCE_FILE_PATH, "wb") as f:
-            f.write(content)
-            
-        return {"success": True, "message": "Эталонный файл успешно загружен"}
-    
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=400, detail="Ошибка при разборе JSON файла")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Ошибка при загрузке файла: {str(e)}")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

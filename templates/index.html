@@ -9,8 +9,6 @@
         <div class="alert alert-warning mb-4">
             <h4 class="alert-heading">Внимание!</h4>
             <p>{{ error }}</p>
-            <hr>
-            <p class="mb-0">Загрузите эталонный файл ниже.</p>
         </div>
         {% endif %}
         
@@ -47,63 +45,6 @@
                 </ol>
             </div>
         </div>
-        
-        <div class="card mt-4">
-            <div class="card-header bg-secondary text-white">
-                <h3 class="mb-0">Загрузка эталонного файла (для преподавателя)</h3>
-            </div>
-            <div class="card-body">
-                <form id="upload-form" class="mt-3">
-                    <div class="mb-3">
-                        <label for="reference_file" class="form-label">Эталонный JSON файл:</label>
-                        <input type="file" class="form-control" id="reference_file" name="reference_file" accept=".json" required>
-                        <div class="form-text">Выберите JSON файл, который будет использоваться как эталон для проверки.</div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-secondary">Загрузить эталонный файл</button>
-                </form>
-                
-                <div id="upload-result" class="mt-3"></div>
-            </div>
-        </div>
     </div>
 </div>
-{% endblock %}
-
-{% block scripts %}
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('upload-form');
-        const resultDiv = document.getElementById('upload-result');
-        
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            
-            try {
-                resultDiv.innerHTML = '<div class="alert alert-info">Загрузка файла...</div>';
-                
-                const response = await fetch('/upload-reference', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok) {
-                    resultDiv.innerHTML = `<div class="alert alert-success">${result.message}</div>`;
-                    // Перезагрузка страницы через 2 секунды для обновления
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000);
-                } else {
-                    resultDiv.innerHTML = `<div class="alert alert-danger">Ошибка: ${result.detail}</div>`;
-                }
-            } catch (error) {
-                resultDiv.innerHTML = `<div class="alert alert-danger">Ошибка: ${error.message}</div>`;
-            }
-        });
-    });
-</script>
 {% endblock %} 

@@ -4,26 +4,28 @@
 
 {% block head %}
 <style>
-    .highlight-error {
+    .error-value {
         background-color: #ffcccc;
         padding: 2px 4px;
         border-radius: 3px;
+        font-weight: bold;
+        color: #721c24;
     }
     
-    .recommendations-container {
-        background-color: #fff3cd;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .error-path {
+        background-color: #6b9ae0;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-weight: bold;
+        color: #eeeeee;
     }
     
-    .differences-container {
-        background-color: #f8d7da;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .recommendation-value {
+        background-color: #d4edda;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-weight: bold;
+        color: #155724;
     }
 </style>
 {% endblock %}
@@ -68,22 +70,30 @@
                     <p>Ваш JSON файл отличается от эталонного. Ознакомьтесь с деталями ниже.</p>
                 </div>
                 
-                <div class="differences-container">
-                    <h4>Найденные различия:</h4>
-                    <ul>
-                        {% for diff in result.differences %}
-                        <li>{{ diff }}</li>
-                        {% endfor %}
-                    </ul>
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0">Найденные различия:</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul id="differences-list">
+                            {% for diff in result.differences %}
+                            <li>{{ diff }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="recommendations-container">
-                    <h4>Рекомендации по исправлению:</h4>
-                    <ul>
-                        {% for rec in result.recommendations %}
-                        <li>{{ rec }}</li>
-                        {% endfor %}
-                    </ul>
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Рекомендации по исправлению:</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul id="recommendations-list">
+                            {% for rec in result.recommendations %}
+                            <li>{{ rec }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
                 {% endif %}
             </div>
@@ -113,4 +123,120 @@
     </div>
     {% endif %}
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Подсветка различий
+        const differencesList = document.getElementById('differences-list');
+        if (differencesList) {
+            const items = differencesList.getElementsByTagName('li');
+            for (let i = 0; i < items.length; i++) {
+                const text = items[i].textContent;
+                
+                // Подсветка для "Разные значения для path: ожидается X, получено Y"
+                if (text.includes('Разные значения для')) {
+                    const pathMatch = text.match(/Разные значения для ([^:]+):/);
+                    const expectedMatch = text.match(/ожидается ([^,]+),/);
+                    const receivedMatch = text.match(/получено (.+)$/);
+                    
+                    if (pathMatch && expectedMatch && receivedMatch) {
+                        const path = pathMatch[1];
+                        const expected = expectedMatch[1];
+                        const received = receivedMatch[1];
+                        
+                        items[i].innerHTML = `Разные значения для <span class="error-path">${path}</span>: ожидается <span class="recommendation-value">${expected}</span>, получено <span class="error-value">${received}</span>`;
+                    }
+                }
+                
+                // Подсветка для "Отсутствует ключ: path"
+                else if (text.includes('Отсутствует ключ:')) {
+                    const pathMatch = text.match(/Отсутствует ключ: (.+)$/);
+                    
+                    if (pathMatch) {
+                        const path = pathMatch[1];
+                        items[i].innerHTML = `Отсутствует ключ: <span class="error-path">${path}</span>`;
+                    }
+                }
+                
+                // Подсветка для "Лишний ключ: path"
+                else if (text.includes('Лишний ключ:')) {
+                    const pathMatch = text.match(/Лишний ключ: (.+)$/);
+                    
+                    if (pathMatch) {
+                        const path = pathMatch[1];
+                        items[i].innerHTML = `Лишний ключ: <span class="error-path">${path}</span>`;
+                    }
+                }
+                
+                // Подсветка для "Разное количество элементов в массиве path: ожидается X, получено Y"
+                else if (text.includes('Разное количество элементов в массиве')) {
+                    const pathMatch = text.match(/Разное количество элементов в массиве ([^:]+):/);
+                    const expectedMatch = text.match(/ожидается (\d+),/);
+                    const receivedMatch = text.match(/получено (\d+)$/);
+                    
+                    if (pathMatch && expectedMatch && receivedMatch) {
+                        const path = pathMatch[1];
+                        const expected = expectedMatch[1];
+                        const received = receivedMatch[1];
+                        
+                        items[i].innerHTML = `Разное количество элементов в массиве <span class="error-path">${path}</span>: ожидается <span class="recommendation-value">${expected}</span>, получено <span class="error-value">${received}</span>`;
+                    }
+                }
+            }
+        }
+        
+        // Подсветка рекомендаций
+        const recommendationsList = document.getElementById('recommendations-list');
+        if (recommendationsList) {
+            const items = recommendationsList.getElementsByTagName('li');
+            for (let i = 0; i < items.length; i++) {
+                const text = items[i].textContent;
+                
+                // Подсветка для "Добавьте ключ 'key' в ваш JSON"
+                if (text.includes('Добавьте ключ')) {
+                    const keyMatch = text.match(/Добавьте ключ '([^']+)'/);
+                    
+                    if (keyMatch) {
+                        const key = keyMatch[1];
+                        items[i].innerHTML = `Добавьте ключ '<span class="recommendation-value">${key}</span>' в ваш JSON`;
+                    }
+                }
+                
+                // Подсветка для "Удалите ключ 'key' из вашего JSON"
+                else if (text.includes('Удалите ключ')) {
+                    const keyMatch = text.match(/Удалите ключ '([^']+)'/);
+                    
+                    if (keyMatch) {
+                        const key = keyMatch[1];
+                        items[i].innerHTML = `Удалите ключ '<span class="error-value">${key}</span>' из вашего JSON`;
+                    }
+                }
+                
+                // Подсветка для "Измените значение ключа path на value"
+                else if (text.includes('Измените значение')) {
+                    const pathMatch = text.match(/Измените значение ([^ ]+) на (.+)$/);
+                    
+                    if (pathMatch) {
+                        const path = pathMatch[1];
+                        const value = pathMatch[2];
+                        items[i].innerHTML = `Измените значение ключа <span class="error-path">${path}</span> на <span class="recommendation-value">${value}</span>`;
+                    }
+                }
+                
+                // Подсветка для "Массив path должен содержать X элементов"
+                else if (text.includes('Массив')) {
+                    const pathMatch = text.match(/Массив ([^ ]+) должен содержать (\d+) элементов/);
+                    
+                    if (pathMatch) {
+                        const path = pathMatch[1];
+                        const count = pathMatch[2];
+                        items[i].innerHTML = `Массив <span class="error-path">${path}</span> должен содержать <span class="recommendation-value">${count}</span> элементов`;
+                    }
+                }
+            }
+        }
+    });
+</script>
 {% endblock %} 
