@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}JSON Validator - Главная{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Проверка JSON файла</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">Загрузите ваш JSON файл для проверки соответствия эталонному файлу.</p>
+                
+                <form action="/validate" method="post" enctype="multipart/form-data" class="mt-4">
+                    <div class="mb-3">
+                        <label for="user_file" class="form-label">Ваш JSON файл:</label>
+                        <input type="file" class="form-control" id="user_file" name="user_file" accept=".json" required>
+                        <div class="form-text">Выберите JSON файл для проверки.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="reference_file" class="form-label">Эталонный файл:</label>
+                        <select class="form-select" id="reference_file" name="reference_file" required>
+                            <option value="" selected disabled>Выберите эталонный файл</option>
+                            {% for file in reference_files %}
+                            <option value="{{ file }}">{{ file }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="form-text">Выберите эталонный файл для сравнения.</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Проверить</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">Инструкция</h3>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Загрузите ваш JSON файл, созданный согласно заданию.</li>
+                    <li>Выберите соответствующий эталонный файл из списка.</li>
+                    <li>Нажмите кнопку "Проверить".</li>
+                    <li>Система сравнит ваш файл с эталонным и покажет результат.</li>
+                    <li>Если файлы идентичны, вы получите секретный код для подтверждения выполнения задания.</li>
+                    <li>Если есть различия, система покажет их и даст рекомендации по исправлению.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

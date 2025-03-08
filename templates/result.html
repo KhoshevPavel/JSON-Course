@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}JSON Validator - Результаты{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <a href="/" class="btn btn-secondary">&larr; Вернуться на главную</a>
+    </div>
+    
+    {% if error %}
+    <div class="col-12">
+        <div class="alert alert-danger">
+            <h4 class="alert-heading">Ошибка!</h4>
+            <p>{{ error }}</p>
+        </div>
+    </div>
+    {% else %}
+    
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Результаты проверки</h2>
+            </div>
+            <div class="card-body">
+                <p><strong>Файл пользователя:</strong> {{ filename }}</p>
+                <p><strong>Эталонный файл:</strong> {{ reference_filename }}</p>
+                
+                {% if result.identical %}
+                <div class="alert alert-success">
+                    <h4 class="alert-heading">Поздравляем!</h4>
+                    <p>Ваш JSON файл полностью соответствует эталонному.</p>
+                </div>
+                
+                <div class="secret-code">
+                    <p>Ваш секретный код:</p>
+                    <div>{{ result.secret_code }}</div>
+                </div>
+                {% else %}
+                <div class="alert alert-warning">
+                    <h4 class="alert-heading">Найдены различия!</h4>
+                    <p>Ваш JSON файл отличается от эталонного. Ознакомьтесь с деталями ниже.</p>
+                </div>
+                
+                <div class="differences-container">
+                    <h4>Найденные различия:</h4>
+                    <ul>
+                        {% for diff in result.differences %}
+                        <li>{{ diff }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="recommendations-container">
+                    <h4>Рекомендации по исправлению:</h4>
+                    <ul>
+                        {% for rec in result.recommendations %}
+                        <li>{{ rec }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">Ваш JSON</h3>
+            </div>
+            <div class="card-body json-container">
+                <pre><code class="language-json">{{ user_json }}</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Эталонный JSON</h3>
+            </div>
+            <div class="card-body json-container">
+                <pre><code class="language-json">{{ reference_json }}</code></pre>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 
