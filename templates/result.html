@@ -257,24 +257,6 @@
                         {% endif %}
                     </div>
                 </div>
-                
-                <div class="card mb-4">
-                    <div class="card-header bg-success text-white">
-                        <h4 class="mb-0">Рекомендации по исправлению: <span class="badge bg-light text-dark">{{ result.recommendations|length }}</span></h4>
-                    </div>
-                    <div class="card-body">
-                        <ul id="recommendations-list">
-                            {% for rec in result.recommendations %}
-                            <li class="{% if loop.index > 5 %}hidden-item{% endif %}" data-index="{{ loop.index }}">{{ rec }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% if result.recommendations|length > 5 %}
-                        <div class="show-more-btn" id="show-more-recommendations">
-                            Показать еще рекомендации ({{ result.recommendations|length - 5 }})
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
                 {% endif %}
             </div>
         </div>
@@ -331,17 +313,6 @@
                     item.classList.remove('hidden-item');
                 });
                 showMoreDifferences.style.display = 'none';
-            });
-        }
-        
-        const showMoreRecommendations = document.getElementById('show-more-recommendations');
-        if (showMoreRecommendations) {
-            showMoreRecommendations.addEventListener('click', () => {
-                const hiddenItems = document.querySelectorAll('#recommendations-list li.hidden-item');
-                hiddenItems.forEach(item => {
-                    item.classList.remove('hidden-item');
-                });
-                showMoreRecommendations.style.display = 'none';
             });
         }
         
@@ -667,57 +638,6 @@
                     container.innerHTML = `<p>${diffText}</p>`;
                 }
             });
-        }
-        
-        // Подсветка рекомендаций
-        const recommendationsList = document.getElementById('recommendations-list');
-        if (recommendationsList) {
-            const items = recommendationsList.getElementsByTagName('li');
-            for (let i = 0; i < items.length; i++) {
-                const text = items[i].textContent;
-                
-                // Подсветка для "Добавьте ключ 'key' в ваш JSON"
-                if (text.includes('Добавьте ключ')) {
-                    const keyMatch = text.match(/Добавьте ключ '([^']+)'/);
-                    
-                    if (keyMatch) {
-                        const key = keyMatch[1];
-                        items[i].innerHTML = `Добавьте ключ '<span class="recommendation-value">${key}</span>' в ваш JSON`;
-                    }
-                }
-                
-                // Подсветка для "Удалите ключ 'key' из вашего JSON"
-                else if (text.includes('Удалите ключ')) {
-                    const keyMatch = text.match(/Удалите ключ '([^']+)'/);
-                    
-                    if (keyMatch) {
-                        const key = keyMatch[1];
-                        items[i].innerHTML = `Удалите ключ '<span class="error-value">${key}</span>' из вашего JSON`;
-                    }
-                }
-                
-                // Подсветка для "Измените значение ключа path на value"
-                else if (text.includes('Измените значение')) {
-                    const pathMatch = text.match(/Измените значение ключа ([^ ]+) на (.+)$/);
-                    
-                    if (pathMatch) {
-                        const path = pathMatch[1];
-                        const value = pathMatch[2];
-                        items[i].innerHTML = `Измените значение ключа <span class="error-path">${path}</span> на <span class="recommendation-value">${value}</span>`;
-                    }
-                }
-                
-                // Подсветка для "Массив path должен содержать X элементов"
-                else if (text.includes('Массив')) {
-                    const pathMatch = text.match(/Массив ([^ ]+) должен содержать (\d+) элементов/);
-                    
-                    if (pathMatch) {
-                        const path = pathMatch[1];
-                        const count = pathMatch[2];
-                        items[i].innerHTML = `Массив <span class="error-path">${path}</span> должен содержать <span class="recommendation-value">${count}</span> элементов`;
-                    }
-                }
-            }
         }
         
         // Запрет копирования для контейнеров JSON
