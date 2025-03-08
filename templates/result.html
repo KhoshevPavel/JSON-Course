@@ -207,7 +207,7 @@
     }
     
     .card-body.json-container pre {
-        padding-right: 10px;
+        padding: 5px;
         margin: 0;
         border-radius: 0;
     }
@@ -521,21 +521,38 @@
                             const refObj = getValueByPath(referenceJson, propPath);
                             
                             if (userObj && typeof userObj === 'object') {
-                                userObject = {};
-                                userObject[propName] = userObj[propName];
+                                userObject = userObj;
                             }
                             
                             if (refObj && typeof refObj === 'object') {
-                                refObject = {};
-                                refObject[propName] = refObj[propName];
+                                refObject = refObj;
                             }
                         } else {
                             // Это корневое свойство
-                            userObject = {};
-                            refObject = {};
-                            userObject[path] = userJson[path];
-                            refObject[path] = referenceJson[path];
+                            userObject = userJson;
+                            refObject = referenceJson;
                         }
+                        
+                        // Форматируем JSON с подсветкой ошибки
+                        const formatJsonWithErrorHighlight = (obj, errorKey) => {
+                            if (!obj) return '';
+                            
+                            const jsonStr = JSON.stringify(obj, null, 2);
+                            const lines = jsonStr.split('\n');
+                            
+                            // Ищем строку, содержащую ключ с ошибкой
+                            const errorLineIndex = lines.findIndex(line => 
+                                line.includes(`"${errorKey}"`) || 
+                                line.includes(`"${errorKey}":`)
+                            );
+                            
+                            if (errorLineIndex !== -1) {
+                                // Подсвечиваем строку с ошибкой
+                                lines[errorLineIndex] = `<span class="error-line">${lines[errorLineIndex]}</span>`;
+                            }
+                            
+                            return lines.join('\n');
+                        };
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
@@ -546,14 +563,16 @@
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${received}</div>
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div><span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div>
+                                <pre>${formatJsonWithErrorHighlight(userObject, key)}</pre>
                             </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный JSON" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${expected}</div>
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div><span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div>
+                                <pre>${formatJsonWithErrorHighlight(refObject, key)}</pre>
                             </div>
                         `;
                     }
@@ -575,12 +594,26 @@
                         // Получаем значение отсутствующего ключа
                         const referenceValue = referenceParent ? referenceParent[key] : undefined;
                         
-                        // Создаем объект для отображения только с нужным ключом
-                        let refObject = null;
-                        if (referenceParent && typeof referenceParent === 'object') {
-                            refObject = {};
-                            refObject[key] = referenceValue;
-                        }
+                        // Форматируем JSON с подсветкой ошибки
+                        const formatJsonWithErrorHighlight = (obj, errorKey) => {
+                            if (!obj) return '';
+                            
+                            const jsonStr = JSON.stringify(obj, null, 2);
+                            const lines = jsonStr.split('\n');
+                            
+                            // Ищем строку, содержащую ключ с ошибкой
+                            const errorLineIndex = lines.findIndex(line => 
+                                line.includes(`"${errorKey}"`) || 
+                                line.includes(`"${errorKey}":`)
+                            );
+                            
+                            if (errorLineIndex !== -1) {
+                                // Подсвечиваем строку с ошибкой
+                                lines[errorLineIndex] = `<span class="error-line">${lines[errorLineIndex]}</span>`;
+                            }
+                            
+                            return lines.join('\n');
+                        };
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
@@ -591,7 +624,8 @@
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(referenceValue)}</div>
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div><span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div>
+                                <pre>${formatJsonWithErrorHighlight(referenceParent, key)}</pre>
                             </div>
                         `;
                     }
@@ -612,12 +646,26 @@
                         // Получаем значение лишнего ключа
                         const userValue = userParent ? userParent[key] : undefined;
                         
-                        // Создаем объект для отображения только с нужным ключом
-                        let userObject = null;
-                        if (userParent && typeof userParent === 'object') {
-                            userObject = {};
-                            userObject[key] = userValue;
-                        }
+                        // Форматируем JSON с подсветкой ошибки
+                        const formatJsonWithErrorHighlight = (obj, errorKey) => {
+                            if (!obj) return '';
+                            
+                            const jsonStr = JSON.stringify(obj, null, 2);
+                            const lines = jsonStr.split('\n');
+                            
+                            // Ищем строку, содержащую ключ с ошибкой
+                            const errorLineIndex = lines.findIndex(line => 
+                                line.includes(`"${errorKey}"`) || 
+                                line.includes(`"${errorKey}":`)
+                            );
+                            
+                            if (errorLineIndex !== -1) {
+                                // Подсвечиваем строку с ошибкой
+                                lines[errorLineIndex] = `<span class="error-line">${lines[errorLineIndex]}</span>`;
+                            }
+                            
+                            return lines.join('\n');
+                        };
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
@@ -628,7 +676,8 @@
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(userValue)}</div>
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div><span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div>
+                                <pre>${formatJsonWithErrorHighlight(userParent, key)}</pre>
                             </div>
                         `;
                     }
@@ -658,14 +707,16 @@
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${received}</div>
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div><span class="error-line">${JSON.stringify(userArray, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div>
+                                <pre><span class="error-line">${JSON.stringify(userArray, null, 2)}</span></pre>
                             </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный массив" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${expected}</div>
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div><span class="correct-line">${JSON.stringify(referenceArray, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div>
+                                <pre><span class="correct-line">${JSON.stringify(referenceArray, null, 2)}</span></pre>
                             </div>
                         `;
                     }
