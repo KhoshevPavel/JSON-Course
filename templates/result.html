@@ -77,24 +77,22 @@
     
     .line-numbers .line-numbers-rows {
         position: absolute;
-        pointer-events: none;
         top: 0;
-        font-size: 100%;
-        left: -3.2em;
-        width: 2.5em;
-        letter-spacing: -1px;
-        border-right: 1px solid #999;
+        left: 0;
+        width: 3em;
+        border-right: 1px solid #ddd;
+        background-color: #f4f4f4;
+        color: #888;
+        text-align: right;
+        padding-right: 5px;
         user-select: none;
-        background-color: #f0f0f0;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
     }
     
     .line-numbers-rows > span {
         display: block;
         counter-increment: linenumber;
         pointer-events: none;
-        padding-right: 0.8em;
+        padding-right: 0.9em;
         text-align: right;
         color: #999;
     }
@@ -209,20 +207,13 @@
     }
     
     .card-body.json-container pre {
-        padding: 5px;
+        padding-right: 10px;
         margin: 0;
         border-radius: 0;
     }
     
     .card-body.json-container code {
         padding-left: 10px;
-    }
-    
-    .line-numbers .line-numbers-rows {
-        background-color: #f4f4f4;
-        color: #888;
-        text-align: right;
-        padding-right: 10px;
     }
 </style>
 {% endblock %}
