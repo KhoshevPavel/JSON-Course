@@ -307,12 +307,28 @@
         // Обработка кнопок "Показать еще"
         const showMoreDifferences = document.getElementById('show-more-differences');
         if (showMoreDifferences) {
+            // Текущее количество отображаемых элементов
+            let visibleCount = 5;
+            const totalItems = document.querySelectorAll('#differences-list .diff-container').length;
+            const itemsPerClick = 5;
+            
             showMoreDifferences.addEventListener('click', () => {
+                // Получаем все скрытые элементы
                 const hiddenItems = document.querySelectorAll('#differences-list .diff-container.hidden-item');
-                hiddenItems.forEach(item => {
-                    item.classList.remove('hidden-item');
-                });
-                showMoreDifferences.style.display = 'none';
+                
+                // Показываем только следующие 5 элементов
+                for (let i = 0; i < itemsPerClick && i < hiddenItems.length; i++) {
+                    hiddenItems[i].classList.remove('hidden-item');
+                    visibleCount++;
+                }
+                
+                // Обновляем текст кнопки
+                const remainingItems = totalItems - visibleCount;
+                if (remainingItems > 0) {
+                    showMoreDifferences.textContent = `Показать еще различия (${remainingItems})`;
+                } else {
+                    showMoreDifferences.style.display = 'none';
+                }
             });
         }
         
