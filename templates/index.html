@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}JSON Validator - Главная{% endblock %}
+{% block title %}JSON Validator - Задание {{ task_id }}{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-10">
         {% if error %}
         <div class="alert alert-warning mb-4">
             <h4 class="alert-heading">Внимание!</h4>
@@ -14,12 +14,12 @@
         
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h2 class="mb-0">Проверка JSON файла</h2>
+                <h2 class="mb-0">Проверка JSON файла - Задание {{ task_id }}</h2>
             </div>
             <div class="card-body">
                 <p class="lead">Загрузите ваш JSON файл для проверки соответствия эталонному файлу.</p>
                 
-                <form action="/validate" method="post" enctype="multipart/form-data" class="mt-4">
+                <form action="/validate/{{ task_id }}" method="post" enctype="multipart/form-data" class="mt-4">
                     <div class="mb-3">
                         <label for="user_file" class="form-label">Ваш JSON файл:</label>
                         <input type="file" class="form-control" id="user_file" name="user_file" accept=".json" required>
@@ -37,7 +37,7 @@
             </div>
             <div class="card-body">
                 <ol>
-                    <li>Загрузите ваш JSON файл, созданный согласно заданию.</li>
+                    <li>Загрузите ваш JSON файл, созданный согласно заданию {{ task_id }}.</li>
                     <li>Нажмите кнопку "Проверить".</li>
                     <li>Система сравнит ваш файл с эталонным и покажет результат.</li>
                     <li>Если файлы идентичны, вы получите секретный код для подтверждения выполнения задания.</li>

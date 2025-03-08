@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}JSON Validator - Результаты{% endblock %}
+{% block title %}JSON Validator - Результаты задания {{ task_id }}{% endblock %}
 
 {% block head %}
 <style>
@@ -58,6 +58,8 @@
         flex-grow: 1;
         padding: 0 5px;
         cursor: pointer;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     /* Стили для нумерации строк */
@@ -66,6 +68,7 @@
         padding-left: 3.2em;
         counter-reset: linenumber;
         margin: 0;
+        width: 100%;
     }
     
     pre.line-numbers > code {
@@ -73,6 +76,7 @@
         white-space: inherit;
         padding: 0;
         margin: 0;
+        width: 100%;
     }
     
     .line-numbers .line-numbers-rows {
@@ -147,6 +151,8 @@
         font-size: 14px;
         max-height: 300px;
         overflow-y: auto;
+        width: 100%;
+        word-wrap: break-word;
     }
     
     .json-preview-removed {
@@ -175,11 +181,13 @@
         border-radius: 5px;
         background-color: #f8f9fa;
         border-left: 3px solid #6c757d;
+        width: 100%;
     }
     
     .diff-container p {
         margin-bottom: 5px;
         font-weight: bold;
+        word-wrap: break-word;
     }
     
     .diff-path-info {
@@ -204,37 +212,75 @@
     .card-body.json-container {
         padding: 0;
         overflow-x: auto;
+        min-width: auto;
+        width: 100%;
     }
     
     .card-body.json-container pre {
-        padding: 5px;
+        padding-right: 5px;
         margin: 0;
         border-radius: 0;
+        width: 100%;
     }
     
     .card-body.json-container code {
         padding-left: 10px;
+        width: 100%;
+    }
+    
+    .json-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-left: -10px;
+        width: 100%;
+    }
+    
+    .json-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+    @media (max-width: 992px) {
+        .json-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    
+    /* Дополнительные стили для корректного отображения JSON */
+    pre.line-numbers code {
+        white-space: pre;
+        word-wrap: normal;
+        overflow-x: auto;
+    }
+    
+    .hljs {
+        white-space: pre;
+        overflow-x: auto;
     }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-12 mb-4">
-        <a href="/" class="btn btn-secondary">&larr; Вернуться на главную</a>
-    </div>
-    
-    {% if error %}
-    <div class="col-12">
-        <div class="alert alert-danger">
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="mb-4">
+            <a href="/{{ task_id }}" class="btn btn-outline-primary">&larr; Вернуться к заданию {{ task_id }}</a>
+        </div>
+        
+        {% if error %}
+        <div class="alert alert-danger mb-4">
             <h4 class="alert-heading">Ошибка!</h4>
             <p>{{ error }}</p>
+            <hr>
+            <p class="mb-0">Пожалуйста, исправьте ошибку и попробуйте снова.</p>
         </div>
-    </div>
-    {% else %}
-    
-    <div class="col-12 mb-4">
-        <div class="card">
+        {% else %}
+        
+        <div class="card mb-4">
             <div class="card-header bg-primary text-white">
                 <h2 class="mb-0">Результаты проверки</h2>
             </div>
@@ -280,30 +326,32 @@
                 {% endif %}
             </div>
         </div>
-    </div>
-    
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header bg-info text-white">
-                <h3 class="mb-0">Ваш JSON</h3>
+        
+        <div class="json-row">
+            <div class="json-col">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h3 class="mb-0">Ваш JSON</h3>
+                    </div>
+                    <div class="card-body json-container">
+                        <pre class="line-numbers no-copy"><code class="language-json">{{ user_json }}</code><span class="line-numbers-rows"></span></pre>
+                    </div>
+                </div>
             </div>
-            <div class="card-body json-container">
-                <pre class="line-numbers no-copy"><code class="language-json">{{ user_json }}</code><span class="line-numbers-rows"></span></pre>
+            
+            <div class="json-col">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="mb-0">Эталонный JSON</h3>
+                    </div>
+                    <div class="card-body json-container">
+                        <pre class="line-numbers no-copy"><code class="language-json">{{ reference_json }}</code><span class="line-numbers-rows"></span></pre>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endif %}
     </div>
-    
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header bg-success text-white">
-                <h3 class="mb-0">Эталонный JSON</h3>
-            </div>
-            <div class="card-body json-container">
-                <pre class="line-numbers no-copy"><code class="language-json">{{ reference_json }}</code><span class="line-numbers-rows"></span></pre>
-            </div>
-        </div>
-    </div>
-    {% endif %}
 </div>
 {% endblock %}
 

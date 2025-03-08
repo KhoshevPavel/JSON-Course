@@ -15,7 +15,7 @@
             background-color: #f8f9fa;
         }
         .container {
-            max-width: 800px !important;
+            max-width: 1000px !important;
             margin: 0 auto;
         }
         .json-container {
@@ -24,12 +24,16 @@
             padding: 15px;
             margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            overflow-x: auto;
         }
         pre {
             margin: 0;
             border-radius: 5px;
             max-height: 400px;
             overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         .secret-code {
             font-size: 2rem;
@@ -57,6 +61,35 @@
             color: #abb2bf;
             border-radius: 5px;
         }
+        .dropdown-menu {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .card-body {
+            min-width: auto;
+            width: 100%;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .row {
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+        .col-md-6, .col-md-8, .col-md-10, .col-md-12 {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        @media (max-width: 1000px) {
+            .card-body {
+                min-width: auto;
+                width: 100%;
+            }
+        }
     </style>
     {% block head %}{% endblock %}
 </head>
@@ -69,8 +102,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Главная</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Выбрать задание
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if available_tasks %}
+                                {% for task in available_tasks %}
+                                    <li><a class="dropdown-item" href="/{{ task }}">Задание {{ task }}</a></li>
+                                {% endfor %}
+                            {% else %}
+                                <li><a class="dropdown-item" href="/1.01">Задание 1.01</a></li>
+                            {% endif %}
+                        </ul>
                     </li>
                 </ul>
             </div>

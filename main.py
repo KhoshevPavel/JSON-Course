@@ -2,9 +2,10 @@ import json
 import os
 import secrets
 import hashlib
+import glob
 from typing import Dict, Any, List, Optional
 from fastapi import FastAPI, Request, File, UploadFile, Form, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import uvicorn
@@ -20,8 +21,14 @@ os.makedirs("reference_json", exist_ok=True)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# Путь к эталонному файлу
-REFERENCE_FILE_PATH = os.path.join("reference_json", "example.json")
+# Получаем список доступных заданий
+def get_available_tasks():
+    tasks = []
+    for task_dir in glob.glob("reference_json/1.*"):
+        task_id = os.path.basename(task_dir)
+        if os.path.exists(os.path.join(task_dir, "good.json")):
+            tasks.append(task_id)
+    return sorted(tasks)
 
 # Функция для сравнения JSON файлов
 def compare_json_files(user_json: Dict[str, Any], reference_json: Dict[str, Any]) -> Dict[str, Any]:
@@ -78,40 +85,70 @@ def compare_json_files(user_json: Dict[str, Any], reference_json: Dict[str, Any]
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    # Проверяем наличие эталонного файла
-    if not os.path.exists(REFERENCE_FILE_PATH):
+    # Перенаправляем на страницу с заданием 1.01 по умолчанию
+    return RedirectResponse(url="/1.01")
+
+@app.get("/{task_id}", response_class=HTMLResponse)
+async def task_page(request: Request, task_id: str):
+    # Получаем список доступных заданий
+    available_tasks = get_available_tasks()
+    
+    # Проверяем, что задание существует
+    task_dir = os.path.join("reference_json", task_id)
+    reference_file = os.path.join(task_dir, "good.json")
+    
+    if not os.path.exists(task_dir) or not os.path.exists(reference_file):
         return templates.TemplateResponse(
             "index.html", 
             {
                 "request": request, 
-                "error": "Эталонный файл не найден. Пожалуйста, обратитесь к преподавателю."
+                "error": f"Задание {task_id} не найдено. Пожалуйста, выберите другое задание.",
+                "available_tasks": available_tasks
             }
         )
     
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        "index.html", 
+        {
+            "request": request,
+            "task_id": task_id,
+            "available_tasks": available_tasks
+        }
+    )
 
-@app.post("/validate", response_class=HTMLResponse)
+@app.post("/validate/{task_id}", response_class=HTMLResponse)
 async def validate_json(
     request: Request,
+    task_id: str,
     user_file: UploadFile = File(...)
 ):
+    # Получаем список доступных заданий
+    available_tasks = get_available_tasks()
+    
     # Проверяем, что загруженный файл - JSON
     if not user_file.filename.endswith(".json"):
         return templates.TemplateResponse(
             "result.html", 
             {
                 "request": request, 
-                "error": "Загруженный файл должен быть в формате JSON"
+                "error": "Загруженный файл должен быть в формате JSON",
+                "task_id": task_id,
+                "available_tasks": available_tasks
             }
         )
     
-    # Проверяем, что эталонный файл существует
-    if not os.path.exists(REFERENCE_FILE_PATH):
+    # Проверяем, что задание существует
+    task_dir = os.path.join("reference_json", task_id)
+    reference_file = os.path.join(task_dir, "good.json")
+    
+    if not os.path.exists(task_dir) or not os.path.exists(reference_file):
         return templates.TemplateResponse(
             "result.html", 
             {
                 "request": request, 
-                "error": "Эталонный файл не найден. Пожалуйста, обратитесь к преподавателю."
+                "error": f"Задание {task_id} не найдено. Пожалуйста, выберите другое задание.",
+                "task_id": task_id,
+                "available_tasks": available_tasks
             }
         )
     
@@ -121,7 +158,7 @@ async def validate_json(
         user_json = json.loads(user_content)
         
         # Читаем эталонный JSON
-        with open(REFERENCE_FILE_PATH, "r", encoding="utf-8") as f:
+        with open(reference_file, "r", encoding="utf-8") as f:
             reference_json = json.load(f)
         
         # Сравниваем файлы
@@ -135,7 +172,9 @@ async def validate_json(
                 "user_json": json.dumps(user_json, indent=2, ensure_ascii=False),
                 "reference_json": json.dumps(reference_json, indent=2, ensure_ascii=False),
                 "filename": user_file.filename,
-                "reference_filename": "example.json"
+                "reference_filename": f"{task_id}/good.json",
+                "task_id": task_id,
+                "available_tasks": available_tasks
             }
         )
     
@@ -144,7 +183,9 @@ async def validate_json(
             "result.html", 
             {
                 "request": request, 
-                "error": "Ошибка при разборе JSON файла. Проверьте синтаксис вашего файла."
+                "error": "Ошибка при разборе JSON файла. Проверьте синтаксис вашего файла.",
+                "task_id": task_id,
+                "available_tasks": available_tasks
             }
         )
     except Exception as e:
@@ -152,9 +193,19 @@ async def validate_json(
             "result.html", 
             {
                 "request": request, 
-                "error": f"Произошла ошибка: {str(e)}"
+                "error": f"Произошла ошибка: {str(e)}",
+                "task_id": task_id,
+                "available_tasks": available_tasks
             }
         )
+
+@app.post("/validate", response_class=HTMLResponse)
+async def validate_json_redirect(
+    request: Request,
+    user_file: UploadFile = File(...)
+):
+    # Перенаправляем на страницу с заданием 1.01 по умолчанию
+    return RedirectResponse(url="/validate/1.01")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
