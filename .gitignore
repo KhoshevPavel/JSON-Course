@@ -1,6 +1,7 @@
+*.txt
+*.json
+/venv/
+*.pyc
 GPT.txt 
 readme.txt 
 requirements.txt
-*.json
-/vevn
-*.txt
