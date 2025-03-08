@@ -27,6 +27,143 @@
         font-weight: bold;
         color: #155724;
     }
+    
+    /* Стиль для отображения различий в стиле GitHub */
+    .diff-line {
+        display: flex;
+        font-family: monospace;
+        margin-bottom: 2px;
+        border-radius: 3px;
+    }
+    
+    .diff-removed {
+        background-color: #ffeef0;
+        color: #b31d28;
+    }
+    
+    .diff-added {
+        background-color: #e6ffec;
+        color: #22863a;
+    }
+    
+    .diff-marker {
+        width: 20px;
+        text-align: center;
+        padding: 0 5px;
+        user-select: none;
+        cursor: pointer;
+    }
+    
+    .diff-content {
+        flex-grow: 1;
+        padding: 0 5px;
+        cursor: pointer;
+    }
+    
+    /* Стили для нумерации строк */
+    pre.line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+    }
+    
+    pre.line-numbers > code {
+        position: relative;
+        white-space: inherit;
+    }
+    
+    .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        user-select: none;
+    }
+    
+    .line-numbers-rows > span {
+        display: block;
+        counter-increment: linenumber;
+        pointer-events: none;
+    }
+    
+    .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+    }
+    
+    /* Запрет копирования */
+    .no-copy {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    /* Стили для кнопки "Показать еще" */
+    .show-more-btn {
+        margin-top: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+    
+    .show-more-btn:hover {
+        background-color: #e9ecef;
+    }
+    
+    /* Стили для скрытых элементов */
+    .hidden-item {
+        display: none;
+    }
+    
+    /* Стили для раскрывающегося JSON */
+    .json-preview {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        display: none;
+    }
+    
+    .json-preview-removed {
+        background-color: #ffeef0;
+    }
+    
+    .json-preview-added {
+        background-color: #e6ffec;
+    }
+    
+    .diff-container {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+        border-left: 3px solid #6c757d;
+    }
+    
+    .diff-container p {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    .diff-path-info {
+        display: none;
+    }
 </style>
 {% endblock %}
 
@@ -72,27 +209,39 @@
                 
                 <div class="card mb-4">
                     <div class="card-header bg-danger text-white">
-                        <h4 class="mb-0">Найденные различия:</h4>
+                        <h4 class="mb-0">Найденные различия: <span class="badge bg-light text-dark">{{ result.differences|length }}</span></h4>
                     </div>
                     <div class="card-body">
-                        <ul id="differences-list">
+                        <div id="differences-list">
                             {% for diff in result.differences %}
-                            <li>{{ diff }}</li>
+                            <div class="diff-container {% if loop.index > 5 %}hidden-item{% endif %}" data-diff="{{ diff }}" data-index="{{ loop.index }}">
+                                <p>{{ diff }}</p>
+                            </div>
                             {% endfor %}
-                        </ul>
+                        </div>
+                        {% if result.differences|length > 5 %}
+                        <div class="show-more-btn" id="show-more-differences">
+                            Показать еще различия ({{ result.differences|length - 5 }})
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
                 
                 <div class="card mb-4">
                     <div class="card-header bg-success text-white">
-                        <h4 class="mb-0">Рекомендации по исправлению:</h4>
+                        <h4 class="mb-0">Рекомендации по исправлению: <span class="badge bg-light text-dark">{{ result.recommendations|length }}</span></h4>
                     </div>
                     <div class="card-body">
                         <ul id="recommendations-list">
                             {% for rec in result.recommendations %}
-                            <li>{{ rec }}</li>
+                            <li class="{% if loop.index > 5 %}hidden-item{% endif %}" data-index="{{ loop.index }}">{{ rec }}</li>
                             {% endfor %}
                         </ul>
+                        {% if result.recommendations|length > 5 %}
+                        <div class="show-more-btn" id="show-more-recommendations">
+                            Показать еще рекомендации ({{ result.recommendations|length - 5 }})
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
                 {% endif %}
@@ -106,7 +255,7 @@
                 <h3 class="mb-0">Ваш JSON</h3>
             </div>
             <div class="card-body json-container">
-                <pre><code class="language-json">{{ user_json }}</code></pre>
+                <pre class="line-numbers no-copy"><code class="language-json">{{ user_json }}</code><span class="line-numbers-rows"></span></pre>
             </div>
         </div>
     </div>
@@ -117,7 +266,7 @@
                 <h3 class="mb-0">Эталонный JSON</h3>
             </div>
             <div class="card-body json-container">
-                <pre><code class="language-json">{{ reference_json }}</code></pre>
+                <pre class="line-numbers no-copy"><code class="language-json">{{ reference_json }}</code><span class="line-numbers-rows"></span></pre>
             </div>
         </div>
     </div>
@@ -128,63 +277,225 @@
 {% block scripts %}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Подсветка различий
+        // Создание нумерации строк
+        document.querySelectorAll('pre.line-numbers').forEach(pre => {
+            const code = pre.querySelector('code');
+            const linesCount = code.innerHTML.split('\n').length;
+            const linesRows = pre.querySelector('.line-numbers-rows');
+            
+            let rowsHtml = '';
+            for (let i = 0; i < linesCount; i++) {
+                rowsHtml += '<span></span>';
+            }
+            
+            linesRows.innerHTML = rowsHtml;
+        });
+        
+        // Обработка кнопок "Показать еще"
+        const showMoreDifferences = document.getElementById('show-more-differences');
+        if (showMoreDifferences) {
+            showMoreDifferences.addEventListener('click', () => {
+                const hiddenItems = document.querySelectorAll('#differences-list .diff-container.hidden-item');
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden-item');
+                });
+                showMoreDifferences.style.display = 'none';
+            });
+        }
+        
+        const showMoreRecommendations = document.getElementById('show-more-recommendations');
+        if (showMoreRecommendations) {
+            showMoreRecommendations.addEventListener('click', () => {
+                const hiddenItems = document.querySelectorAll('#recommendations-list li.hidden-item');
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden-item');
+                });
+                showMoreRecommendations.style.display = 'none';
+            });
+        }
+        
+        // Функция для получения значения по пути в JSON
+        function getValueByPath(obj, path) {
+            const parts = path.replace(/\[(\d+)\]/g, '.$1').split('.');
+            let current = obj;
+            
+            for (let part of parts) {
+                if (part === '') continue;
+                if (current === undefined || current === null) return undefined;
+                
+                // Если часть пути - число, преобразуем его
+                if (!isNaN(part)) {
+                    part = parseInt(part);
+                }
+                
+                current = current[part];
+            }
+            
+            return current;
+        }
+        
+        // Функция для форматирования JSON
+        function formatJSON(obj) {
+            return JSON.stringify(obj, null, 2);
+        }
+        
+        // Преобразование различий в стиль GitHub с возможностью раскрытия JSON
         const differencesList = document.getElementById('differences-list');
         if (differencesList) {
-            const items = differencesList.getElementsByTagName('li');
-            for (let i = 0; i < items.length; i++) {
-                const text = items[i].textContent;
+            const diffContainers = differencesList.querySelectorAll('.diff-container');
+            const userJson = JSON.parse(document.querySelector('.card-body.json-container code').textContent);
+            const referenceJson = JSON.parse(document.querySelectorAll('.card-body.json-container code')[1].textContent);
+            
+            diffContainers.forEach(container => {
+                const diffText = container.dataset.diff;
                 
                 // Подсветка для "Разные значения для path: ожидается X, получено Y"
-                if (text.includes('Разные значения для')) {
-                    const pathMatch = text.match(/Разные значения для ([^:]+):/);
-                    const expectedMatch = text.match(/ожидается ([^,]+),/);
-                    const receivedMatch = text.match(/получено (.+)$/);
+                if (diffText.includes('Разные значения для')) {
+                    const pathMatch = diffText.match(/Разные значения для ([^:]+):/);
+                    const expectedMatch = diffText.match(/ожидается ([^,]+),/);
+                    const receivedMatch = diffText.match(/получено (.+)$/);
                     
                     if (pathMatch && expectedMatch && receivedMatch) {
                         const path = pathMatch[1];
                         const expected = expectedMatch[1];
                         const received = receivedMatch[1];
                         
-                        items[i].innerHTML = `Разные значения для <span class="error-path">${path}</span>: ожидается <span class="recommendation-value">${expected}</span>, получено <span class="error-value">${received}</span>`;
+                        // Получаем объекты по пути
+                        const userValue = getValueByPath(userJson, path);
+                        const referenceValue = getValueByPath(referenceJson, path);
+                        
+                        // Создаем отображение в стиле GitHub с возможностью раскрытия
+                        container.innerHTML = `
+                            <p>Разные значения для <span class="error-path">${path}</span>:</p>
+                            <div class="diff-path-info">
+                                Показать/скрыть контекст вашего JSON
+                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
+                                ${formatJSON(userValue)}
+                            </div>
+                            <div class="diff-path-info">
+                                Показать/скрыть контекст эталонного JSON
+                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
+                                ${formatJSON(referenceValue)}
+                            </div>
+                            <div class="diff-line diff-removed">
+                                <div class="diff-marker" title="Развернуть/свернуть ваш JSON" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
+                                <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${received}</div>
+                            </div>
+                            <div class="diff-line diff-added">
+                                <div class="diff-marker" title="Развернуть/свернуть эталонный JSON" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
+                                <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${expected}</div>
+                            </div>
+                        `;
                     }
                 }
                 
                 // Подсветка для "Отсутствует ключ: path"
-                else if (text.includes('Отсутствует ключ:')) {
-                    const pathMatch = text.match(/Отсутствует ключ: (.+)$/);
+                else if (diffText.includes('Отсутствует ключ:')) {
+                    const pathMatch = diffText.match(/Отсутствует ключ: (.+)$/);
                     
                     if (pathMatch) {
                         const path = pathMatch[1];
-                        items[i].innerHTML = `Отсутствует ключ: <span class="error-path">${path}</span>`;
+                        const parentPath = path.substring(0, path.lastIndexOf('.'));
+                        const key = path.substring(path.lastIndexOf('.') + 1);
+                        
+                        // Получаем родительский объект в эталонном JSON
+                        const referenceParent = parentPath ? getValueByPath(referenceJson, parentPath) : referenceJson;
+                        const referenceValue = referenceParent ? referenceParent[key] : undefined;
+                        
+                        // Создаем отображение в стиле GitHub с возможностью раскрытия
+                        container.innerHTML = `
+                            <p>Отсутствует ключ: <span class="error-path">${path}</span></p>
+                            <div class="diff-path-info">
+                                Показать/скрыть ожидаемое значение
+                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
+                                ${formatJSON(referenceValue)}
+                            </div>
+                            <div class="diff-line diff-added">
+                                <div class="diff-marker" title="Развернуть/свернуть ожидаемое значение" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
+                                <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(referenceValue)}</div>
+                            </div>
+                        `;
                     }
                 }
                 
                 // Подсветка для "Лишний ключ: path"
-                else if (text.includes('Лишний ключ:')) {
-                    const pathMatch = text.match(/Лишний ключ: (.+)$/);
+                else if (diffText.includes('Лишний ключ:')) {
+                    const pathMatch = diffText.match(/Лишний ключ: (.+)$/);
                     
                     if (pathMatch) {
                         const path = pathMatch[1];
-                        items[i].innerHTML = `Лишний ключ: <span class="error-path">${path}</span>`;
+                        const parentPath = path.substring(0, path.lastIndexOf('.'));
+                        const key = path.substring(path.lastIndexOf('.') + 1);
+                        
+                        // Получаем родительский объект в пользовательском JSON
+                        const userParent = parentPath ? getValueByPath(userJson, parentPath) : userJson;
+                        const userValue = userParent ? userParent[key] : undefined;
+                        
+                        // Создаем отображение в стиле GitHub с возможностью раскрытия
+                        container.innerHTML = `
+                            <p>Лишний ключ: <span class="error-path">${path}</span></p>
+                            <div class="diff-path-info">
+                                Показать/скрыть лишнее значение
+                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
+                                ${formatJSON(userValue)}
+                            </div>
+                            <div class="diff-line diff-removed">
+                                <div class="diff-marker" title="Развернуть/свернуть лишнее значение" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
+                                <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(userValue)}</div>
+                            </div>
+                        `;
                     }
                 }
                 
                 // Подсветка для "Разное количество элементов в массиве path: ожидается X, получено Y"
-                else if (text.includes('Разное количество элементов в массиве')) {
-                    const pathMatch = text.match(/Разное количество элементов в массиве ([^:]+):/);
-                    const expectedMatch = text.match(/ожидается (\d+),/);
-                    const receivedMatch = text.match(/получено (\d+)$/);
+                else if (diffText.includes('Разное количество элементов в массиве')) {
+                    const pathMatch = diffText.match(/Разное количество элементов в массиве ([^:]+):/);
+                    const expectedMatch = diffText.match(/ожидается (\d+),/);
+                    const receivedMatch = diffText.match(/получено (\d+)$/);
                     
                     if (pathMatch && expectedMatch && receivedMatch) {
                         const path = pathMatch[1];
                         const expected = expectedMatch[1];
                         const received = receivedMatch[1];
                         
-                        items[i].innerHTML = `Разное количество элементов в массиве <span class="error-path">${path}</span>: ожидается <span class="recommendation-value">${expected}</span>, получено <span class="error-value">${received}</span>`;
+                        // Получаем массивы по пути
+                        const userArray = getValueByPath(userJson, path);
+                        const referenceArray = getValueByPath(referenceJson, path);
+                        
+                        // Создаем отображение в стиле GitHub с возможностью раскрытия
+                        container.innerHTML = `
+                            <p>Разное количество элементов в массиве <span class="error-path">${path}</span>:</p>
+                            <div class="diff-path-info">
+                                Показать/скрыть ваш массив
+                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
+                                ${formatJSON(userArray)}
+                            </div>
+                            <div class="diff-path-info">
+                                Показать/скрыть эталонный массив
+                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
+                                ${formatJSON(referenceArray)}
+                            </div>
+                            <div class="diff-line diff-removed">
+                                <div class="diff-marker" title="Развернуть/свернуть ваш массив" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
+                                <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${received}</div>
+                            </div>
+                            <div class="diff-line diff-added">
+                                <div class="diff-marker" title="Развернуть/свернуть эталонный массив" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
+                                <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${expected}</div>
+                            </div>
+                        `;
                     }
+                } else {
+                    // Для других типов различий оставляем текст как есть
+                    container.innerHTML = `<p>${diffText}</p>`;
                 }
-            }
+            });
         }
         
         // Подсветка рекомендаций
@@ -216,7 +527,7 @@
                 
                 // Подсветка для "Измените значение ключа path на value"
                 else if (text.includes('Измените значение')) {
-                    const pathMatch = text.match(/Измените значение ([^ ]+) на (.+)$/);
+                    const pathMatch = text.match(/Измените значение ключа ([^ ]+) на (.+)$/);
                     
                     if (pathMatch) {
                         const path = pathMatch[1];
@@ -237,6 +548,24 @@
                 }
             }
         }
+        
+        // Запрет копирования для контейнеров JSON
+        document.querySelectorAll('.no-copy').forEach(element => {
+            element.addEventListener('copy', event => {
+                event.preventDefault();
+                return false;
+            });
+            
+            element.addEventListener('cut', event => {
+                event.preventDefault();
+                return false;
+            });
+            
+            element.addEventListener('contextmenu', event => {
+                event.preventDefault();
+                return false;
+            });
+        });
     });
 </script>
 {% endblock %} 

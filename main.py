@@ -71,7 +71,7 @@ def compare_json_files(user_json: Dict[str, Any], reference_json: Dict[str, Any]
         
         elif user_obj != ref_obj:
             result["differences"].append(f"Разные значения для {path}: ожидается {ref_obj}, получено {user_obj}")
-            result["recommendations"].append(f"Измените значение {path} на {ref_obj}")
+            result["recommendations"].append(f"Измените значение ключа {path} на {ref_obj}")
     
     find_differences(user_json, reference_json)
     return result

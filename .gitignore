@@ -1,1 +1,6 @@
+GPT.txt 
+readme.txt 
+requirements.txt
+*.json
+/vevn
 *.txt
