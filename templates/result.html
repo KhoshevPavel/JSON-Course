@@ -138,6 +138,10 @@
         font-family: monospace;
         white-space: pre-wrap;
         display: none;
+        line-height: 1.5;
+        font-size: 14px;
+        max-height: 300px;
+        overflow-y: auto;
     }
     
     .json-preview-removed {
@@ -146,6 +150,18 @@
     
     .json-preview-added {
         background-color: #e6ffec;
+    }
+    
+    .json-preview .error-line {
+        background-color: #ffcccc;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .json-preview .correct-line {
+        background-color: #d4edda;
+        display: inline-block;
+        width: 100%;
     }
     
     .diff-container {
@@ -163,6 +179,19 @@
     
     .diff-path-info {
         display: none;
+    }
+    
+    .json-preview-hint {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #6c757d;
+        font-style: italic;
+    }
+    
+    .path-context {
+        font-size: 0.9em;
+        margin-top: 5px;
+        color: #6c757d;
     }
 </style>
 {% endblock %}
@@ -314,6 +343,37 @@
             });
         }
         
+        // Функция для получения пути к родительскому объекту
+        function getParentPath(path) {
+            // Если путь содержит индекс массива, возвращаем путь до массива
+            if (path.includes('[')) {
+                return path.substring(0, path.lastIndexOf('['));
+            }
+            // Иначе возвращаем путь до последней точки
+            if (path.includes('.')) {
+                return path.substring(0, path.lastIndexOf('.'));
+            }
+            // Если нет ни точек, ни индексов, значит это корневое свойство
+            return '';
+        }
+        
+        // Функция для получения ключа или индекса из пути
+        function getKeyFromPath(path) {
+            // Если путь содержит индекс массива
+            if (path.includes('[')) {
+                const match = path.match(/\[(\d+)\]$/);
+                if (match) {
+                    return parseInt(match[1]);
+                }
+            }
+            // Иначе берем последнюю часть после точки
+            if (path.includes('.')) {
+                return path.substring(path.lastIndexOf('.') + 1);
+            }
+            // Если нет ни точек, ни индексов, значит это сам ключ
+            return path;
+        }
+        
         // Функция для получения значения по пути в JSON
         function getValueByPath(obj, path) {
             const parts = path.replace(/\[(\d+)\]/g, '.$1').split('.');
@@ -334,9 +394,63 @@
             return current;
         }
         
-        // Функция для форматирования JSON
-        function formatJSON(obj) {
-            return JSON.stringify(obj, null, 2);
+        // Функция для извлечения объекта из массива или получения конкретного свойства
+        function getObjectContext(obj, path, key) {
+            // Извлекаем объект или конкретный элемент массива
+            if (Array.isArray(obj)) {
+                if (typeof key === 'number' && key >= 0 && key < obj.length) {
+                    // Вернем элемент массива, если ключ - это индекс
+                    return obj[key];
+                }
+            } else if (typeof obj === 'object' && obj !== null) {
+                // Если это объект, проверяем наличие ключа
+                if (key in obj) {
+                    return obj[key];
+                }
+            }
+            
+            // Если не удалось извлечь, возвращаем пустой объект
+            return null;
+        }
+        
+        // Функция для форматирования JSON с подсветкой определенного значения
+        function formatJSONWithHighlight(obj, key, value, isRemoved = true) {
+            const cssClass = isRemoved ? 'error-line' : 'correct-line';
+            
+            // Если объект null или undefined, возвращаем пустую строку
+            if (obj === null || obj === undefined) {
+                return "<span class='error-line'>Объект не найден</span>";
+            }
+            
+            // Извлекаем объект или элемент массива для отображения
+            let contextObject = null;
+            
+            if (Array.isArray(obj)) {
+                // Если это массив и ключ - числовой индекс
+                if (typeof key === 'number' && key >= 0 && key < obj.length) {
+                    // Отображаем только объект с этим индексом
+                    const itemStr = JSON.stringify(obj[key], null, 2);
+                    return `<span class="${cssClass}">${itemStr}</span>`;
+                } else {
+                    // Если что-то пошло не так, отображаем весь массив
+                    return `<span class="${cssClass}">${JSON.stringify(obj, null, 2)}</span>`;
+                }
+            } else if (typeof obj === 'object' && obj !== null) {
+                // Для обычного объекта
+                if (key in obj) {
+                    // Отображаем только нужное свойство с контекстом
+                    const result = {};
+                    result[key] = obj[key];
+                    const objStr = JSON.stringify(result, null, 2);
+                    return `<span class="${cssClass}">${objStr}</span>`;
+                } else {
+                    // Если ключ не найден, отображаем весь объект
+                    return `<span class="${cssClass}">${JSON.stringify(obj, null, 2)}</span>`;
+                }
+            } else {
+                // Если это примитивное значение
+                return `<span class="${cssClass}">${JSON.stringify(obj, null, 2)}</span>`;
+            }
         }
         
         // Преобразование различий в стиль GitHub с возможностью раскрытия JSON
@@ -360,32 +474,79 @@
                         const expected = expectedMatch[1];
                         const received = receivedMatch[1];
                         
-                        // Получаем объекты по пути
-                        const userValue = getValueByPath(userJson, path);
-                        const referenceValue = getValueByPath(referenceJson, path);
+                        // Получаем ключ и значения
+                        const key = getKeyFromPath(path);
+                        const parentPath = getParentPath(path);
+                        
+                        // Получаем родительские объекты
+                        const userParent = parentPath ? getValueByPath(userJson, parentPath) : userJson;
+                        const referenceParent = parentPath ? getValueByPath(referenceJson, parentPath) : referenceJson;
+                        
+                        // Получаем значения для отображения (весь объект в случае массива)
+                        let userObject, refObject;
+                        
+                        if (path.includes('[')) {
+                            // Извлекаем элемент массива по индексу
+                            const arrayPath = path.substring(0, path.lastIndexOf('['));
+                            const indexMatch = path.match(/\[(\d+)\]/);
+                            const index = indexMatch ? parseInt(indexMatch[1]) : -1;
+                            
+                            if (arrayPath === '') {
+                                // Если это корневой массив
+                                userObject = userJson[index];
+                                refObject = referenceJson[index];
+                            } else {
+                                // Если это вложенный массив
+                                const userArray = getValueByPath(userJson, arrayPath);
+                                const refArray = getValueByPath(referenceJson, arrayPath);
+                                
+                                userObject = userArray && index >= 0 && index < userArray.length ? userArray[index] : null;
+                                refObject = refArray && index >= 0 && index < refArray.length ? refArray[index] : null;
+                            }
+                        } else if (path.includes('.')) {
+                            // Извлекаем вложенный объект
+                            const propPath = path.substring(0, path.lastIndexOf('.'));
+                            const propName = path.substring(path.lastIndexOf('.') + 1);
+                            
+                            const userObj = getValueByPath(userJson, propPath);
+                            const refObj = getValueByPath(referenceJson, propPath);
+                            
+                            if (userObj && typeof userObj === 'object') {
+                                userObject = {};
+                                userObject[propName] = userObj[propName];
+                            }
+                            
+                            if (refObj && typeof refObj === 'object') {
+                                refObject = {};
+                                refObject[propName] = refObj[propName];
+                            }
+                        } else {
+                            // Это корневое свойство
+                            userObject = {};
+                            refObject = {};
+                            userObject[path] = userJson[path];
+                            refObject[path] = referenceJson[path];
+                        }
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
                             <p>Разные значения для <span class="error-path">${path}</span>:</p>
-                            <div class="diff-path-info">
-                                Показать/скрыть контекст вашего JSON
-                            </div>
-                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                ${formatJSON(userValue)}
-                            </div>
-                            <div class="diff-path-info">
-                                Показать/скрыть контекст эталонного JSON
-                            </div>
-                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                ${formatJSON(referenceValue)}
-                            </div>
+                            <div class="json-preview-hint">* Нажмите на строку ниже, чтобы увидеть контекст ошибки</div>
                             <div class="diff-line diff-removed">
                                 <div class="diff-marker" title="Развернуть/свернуть ваш JSON" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${received}</div>
                             </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
+                                <div class="path-context">Путь: ${path}</div>
+                                <span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
+                            </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный JSON" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${expected}</div>
+                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
+                                <div class="path-context">Путь: ${path}</div>
+                                <span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
                             </div>
                         `;
                     }
@@ -397,25 +558,34 @@
                     
                     if (pathMatch) {
                         const path = pathMatch[1];
-                        const parentPath = path.substring(0, path.lastIndexOf('.'));
-                        const key = path.substring(path.lastIndexOf('.') + 1);
+                        const parentPath = getParentPath(path);
+                        const key = getKeyFromPath(path);
                         
-                        // Получаем родительский объект в эталонном JSON
+                        // Получаем родительские объекты
+                        const userParent = parentPath ? getValueByPath(userJson, parentPath) : userJson;
                         const referenceParent = parentPath ? getValueByPath(referenceJson, parentPath) : referenceJson;
+                        
+                        // Получаем значение отсутствующего ключа
                         const referenceValue = referenceParent ? referenceParent[key] : undefined;
+                        
+                        // Создаем объект для отображения только с нужным ключом
+                        let refObject = null;
+                        if (referenceParent && typeof referenceParent === 'object') {
+                            refObject = {};
+                            refObject[key] = referenceValue;
+                        }
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
                             <p>Отсутствует ключ: <span class="error-path">${path}</span></p>
-                            <div class="diff-path-info">
-                                Показать/скрыть ожидаемое значение
-                            </div>
-                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                ${formatJSON(referenceValue)}
-                            </div>
+                            <div class="json-preview-hint">* Нажмите на строку ниже, чтобы увидеть, где должен быть этот ключ</div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть ожидаемое значение" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(referenceValue)}</div>
+                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
+                                <div class="path-context">Путь: ${path}</div>
+                                <span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
                             </div>
                         `;
                     }
@@ -427,25 +597,33 @@
                     
                     if (pathMatch) {
                         const path = pathMatch[1];
-                        const parentPath = path.substring(0, path.lastIndexOf('.'));
-                        const key = path.substring(path.lastIndexOf('.') + 1);
+                        const parentPath = getParentPath(path);
+                        const key = getKeyFromPath(path);
                         
-                        // Получаем родительский объект в пользовательском JSON
+                        // Получаем родительские объекты
                         const userParent = parentPath ? getValueByPath(userJson, parentPath) : userJson;
+                        
+                        // Получаем значение лишнего ключа
                         const userValue = userParent ? userParent[key] : undefined;
+                        
+                        // Создаем объект для отображения только с нужным ключом
+                        let userObject = null;
+                        if (userParent && typeof userParent === 'object') {
+                            userObject = {};
+                            userObject[key] = userValue;
+                        }
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
                             <p>Лишний ключ: <span class="error-path">${path}</span></p>
-                            <div class="diff-path-info">
-                                Показать/скрыть лишнее значение
-                            </div>
-                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                ${formatJSON(userValue)}
-                            </div>
+                            <div class="json-preview-hint">* Нажмите на строку ниже, чтобы увидеть лишний ключ в контексте</div>
                             <div class="diff-line diff-removed">
                                 <div class="diff-marker" title="Развернуть/свернуть лишнее значение" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(userValue)}</div>
+                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
+                                <div class="path-context">Путь: ${path}</div>
+                                <span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
                             </div>
                         `;
                     }
@@ -469,25 +647,22 @@
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
                             <p>Разное количество элементов в массиве <span class="error-path">${path}</span>:</p>
-                            <div class="diff-path-info">
-                                Показать/скрыть ваш массив
-                            </div>
-                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                ${formatJSON(userArray)}
-                            </div>
-                            <div class="diff-path-info">
-                                Показать/скрыть эталонный массив
-                            </div>
-                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                ${formatJSON(referenceArray)}
-                            </div>
+                            <div class="json-preview-hint">* Нажмите на строку ниже, чтобы увидеть массивы целиком</div>
                             <div class="diff-line diff-removed">
                                 <div class="diff-marker" title="Развернуть/свернуть ваш массив" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${received}</div>
                             </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
+                                <div class="path-context">Путь: ${path}</div>
+                                <span class="error-line">${JSON.stringify(userArray, null, 2)}</span>
+                            </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный массив" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${expected}</div>
+                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
+                                <div class="path-context">Путь: ${path}</div>
+                                <span class="correct-line">${JSON.stringify(referenceArray, null, 2)}</span>
                             </div>
                         `;
                     }
