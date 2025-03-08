@@ -141,18 +141,23 @@
         background-color: #f8f9fa;
         border: 1px solid #ddd;
         border-radius: 4px;
-        padding: 10px;
+        padding: 5px;
         margin-top: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         font-family: monospace;
         white-space: pre-wrap;
         display: none;
-        line-height: 1.5;
+        line-height: 1.4;
         font-size: 14px;
         max-height: 300px;
         overflow-y: auto;
         width: 100%;
         word-wrap: break-word;
+    }
+    
+    .json-preview pre {
+        margin: 0;
+        padding: 0;
     }
     
     .json-preview-removed {
@@ -665,18 +670,12 @@
                                 <div class="diff-marker" title="Развернуть/свернуть ваш JSON" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${received}</div>
                             </div>
-                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div>
-                                <pre>${userJsonFormatted}</pre>
-                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed"><pre>${userJsonFormatted}</pre></div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный JSON" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${expected}</div>
                             </div>
-                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div>
-                                <pre>${refJsonFormatted}</pre>
-                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added"><pre>${refJsonFormatted}</pre></div>
                         `;
                     }
                 }
@@ -713,10 +712,7 @@
                                 <div class="diff-marker" title="Развернуть/свернуть ожидаемое значение" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(referenceValue)}</div>
                             </div>
-                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div>
-                                <pre>${refJsonFormatted}</pre>
-                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added"><pre>${refJsonFormatted}</pre></div>
                         `;
                     }
                 }
@@ -752,10 +748,7 @@
                                 <div class="diff-marker" title="Развернуть/свернуть лишнее значение" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(userValue)}</div>
                             </div>
-                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div>
-                                <pre>${userJsonFormatted}</pre>
-                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed"><pre>${userJsonFormatted}</pre></div>
                         `;
                     }
                 }
@@ -791,18 +784,12 @@
                                 <div class="diff-marker" title="Развернуть/свернуть ваш массив" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">-</div>
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${received}</div>
                             </div>
-                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div>
-                                <pre>${userJsonFormatted}</pre>
-                            </div>
+                            <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed"><pre>${userJsonFormatted}</pre></div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный массив" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${expected}</div>
                             </div>
-                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div>
-                                <pre>${refJsonFormatted}</pre>
-                            </div>
+                            <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added"><pre>${refJsonFormatted}</pre></div>
                         `;
                     }
                 } else {
