@@ -190,8 +190,10 @@
     
     .path-context {
         font-size: 0.9em;
-        margin-top: 5px;
+        margin: 0;
+        padding: 0;
         color: #6c757d;
+        display: inline-block;
     }
 </style>
 {% endblock %}
@@ -537,16 +539,14 @@
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${received}</div>
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div>
-                                <span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div><span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
                             </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный JSON" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">${expected}</div>
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div>
-                                <span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div><span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
                             </div>
                         `;
                     }
@@ -584,8 +584,7 @@
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(referenceValue)}</div>
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div>
-                                <span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div><span class="correct-line">${JSON.stringify(refObject, null, 2)}</span>
                             </div>
                         `;
                     }
@@ -622,8 +621,7 @@
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">"${key}": ${JSON.stringify(userValue)}</div>
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div>
-                                <span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div><span class="error-line">${JSON.stringify(userObject, null, 2)}</span>
                             </div>
                         `;
                     }
@@ -653,16 +651,14 @@
                                 <div class="diff-content" onclick="document.getElementById('user-json-${container.dataset.index}').style.display = document.getElementById('user-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${received}</div>
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
-                                <div class="path-context">Путь: ${path}</div>
-                                <span class="error-line">${JSON.stringify(userArray, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div><span class="error-line">${JSON.stringify(userArray, null, 2)}</span>
                             </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный массив" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
                                 <div class="diff-content" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">Элементов: ${expected}</div>
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
-                                <div class="path-context">Путь: ${path}</div>
-                                <span class="correct-line">${JSON.stringify(referenceArray, null, 2)}</span>
+                                <div class="path-context">Путь: ${path}</div><span class="correct-line">${JSON.stringify(referenceArray, null, 2)}</span>
                             </div>
                         `;
                     }
