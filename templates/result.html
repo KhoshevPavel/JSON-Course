@@ -470,44 +470,112 @@
             return null;
         }
         
-        // Функция для форматирования JSON с подсветкой определенного значения
-        function formatJSONWithHighlight(obj, key, value, isRemoved = true) {
-            const cssClass = isRemoved ? 'error-line' : 'correct-line';
+        // Функция для сравнения двух объектов и выделения различий
+        function compareObjects(userObj, refObj) {
+            const differences = [];
             
-            // Если объект null или undefined, возвращаем пустую строку
-            if (obj === null || obj === undefined) {
-                return "<span class='error-line'>Объект не найден</span>";
+            // Рекурсивная функция для сравнения объектов
+            function compare(user, ref, path = '') {
+                // Если типы разные, это различие
+                if (typeof user !== typeof ref) {
+                    differences.push({ path, user, ref });
+                    return;
+                }
+                
+                // Если это примитивные типы и они разные
+                if (typeof user !== 'object' || user === null || ref === null) {
+                    if (user !== ref) {
+                        differences.push({ path, user, ref });
+                    }
+                    return;
+                }
+                
+                // Если это массивы
+                if (Array.isArray(user) && Array.isArray(ref)) {
+                    // Сравниваем длину массивов
+                    if (user.length !== ref.length) {
+                        differences.push({ path: path + '.length', user: user.length, ref: ref.length });
+                    }
+                    
+                    // Сравниваем элементы массивов
+                    for (let i = 0; i < Math.max(user.length, ref.length); i++) {
+                        const newPath = path ? `${path}[${i}]` : `[${i}]`;
+                        
+                        if (i >= user.length) {
+                            differences.push({ path: newPath, user: undefined, ref: ref[i] });
+                        } else if (i >= ref.length) {
+                            differences.push({ path: newPath, user: user[i], ref: undefined });
+                        } else {
+                            compare(user[i], ref[i], newPath);
+                        }
+                    }
+                    return;
+                }
+                
+                // Если это объекты
+                // Проверяем отсутствующие ключи в пользовательском объекте
+                for (const key in ref) {
+                    const newPath = path ? `${path}.${key}` : key;
+                    
+                    if (!(key in user)) {
+                        differences.push({ path: newPath, user: undefined, ref: ref[key] });
+                    } else {
+                        compare(user[key], ref[key], newPath);
+                    }
+                }
+                
+                // Проверяем лишние ключи в пользовательском объекте
+                for (const key in user) {
+                    const newPath = path ? `${path}.${key}` : key;
+                    
+                    if (!(key in ref)) {
+                        differences.push({ path: newPath, user: user[key], ref: undefined });
+                    }
+                }
             }
             
-            // Извлекаем объект или элемент массива для отображения
-            let contextObject = null;
+            compare(userObj, refObj);
+            return differences;
+        }
+        
+        // Функция для форматирования JSON с подсветкой различий
+        function formatJsonWithDiffHighlight(obj, diffPaths, isUserJson) {
+            if (!obj) return '';
             
-            if (Array.isArray(obj)) {
-                // Если это массив и ключ - числовой индекс
-                if (typeof key === 'number' && key >= 0 && key < obj.length) {
-                    // Отображаем только объект с этим индексом
-                    const itemStr = JSON.stringify(obj[key], null, 2);
-                    return `<span class="${cssClass}">${itemStr}</span>`;
-                } else {
-                    // Если что-то пошло не так, отображаем весь массив
-                    return `<span class="${cssClass}">${JSON.stringify(obj, null, 2)}</span>`;
+            const jsonStr = JSON.stringify(obj, null, 2);
+            const lines = jsonStr.split('\n');
+            const result = [];
+            
+            // Проходим по каждой строке JSON
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                let highlighted = false;
+                
+                // Проверяем, содержит ли строка какой-либо из путей различий
+                for (const diffPath of diffPaths) {
+                    // Извлекаем ключ из строки
+                    const match = line.match(/"([^"]+)":/);
+                    if (match) {
+                        const key = match[1];
+                        // Проверяем, содержится ли ключ в пути различия
+                        if (diffPath.endsWith(`.${key}`) || diffPath === key || 
+                            diffPath.includes(`[`) && key === diffPath.split('.').pop()) {
+                            // Подсвечиваем строку
+                            const cssClass = isUserJson ? 'error-line' : 'correct-line';
+                            result.push(`<span class="${cssClass}">${line}</span>`);
+                            highlighted = true;
+                            break;
+                        }
+                    }
                 }
-            } else if (typeof obj === 'object' && obj !== null) {
-                // Для обычного объекта
-                if (key in obj) {
-                    // Отображаем только нужное свойство с контекстом
-                    const result = {};
-                    result[key] = obj[key];
-                    const objStr = JSON.stringify(result, null, 2);
-                    return `<span class="${cssClass}">${objStr}</span>`;
-                } else {
-                    // Если ключ не найден, отображаем весь объект
-                    return `<span class="${cssClass}">${JSON.stringify(obj, null, 2)}</span>`;
+                
+                // Если строка не была подсвечена, добавляем её без изменений
+                if (!highlighted) {
+                    result.push(line);
                 }
-            } else {
-                // Если это примитивное значение
-                return `<span class="${cssClass}">${JSON.stringify(obj, null, 2)}</span>`;
             }
+            
+            return result.join('\n');
         }
         
         // Преобразование различий в стиль GitHub с возможностью раскрытия JSON
@@ -539,7 +607,7 @@
                         const userParent = parentPath ? getValueByPath(userJson, parentPath) : userJson;
                         const referenceParent = parentPath ? getValueByPath(referenceJson, parentPath) : referenceJson;
                         
-                        // Получаем значения для отображения (весь объект в случае массива)
+                        // Получаем значения для отображения
                         let userObject, refObject;
                         
                         if (path.includes('[')) {
@@ -581,26 +649,13 @@
                             refObject = referenceJson;
                         }
                         
-                        // Форматируем JSON с подсветкой ошибки
-                        const formatJsonWithErrorHighlight = (obj, errorKey) => {
-                            if (!obj) return '';
-                            
-                            const jsonStr = JSON.stringify(obj, null, 2);
-                            const lines = jsonStr.split('\n');
-                            
-                            // Ищем строку, содержащую ключ с ошибкой
-                            const errorLineIndex = lines.findIndex(line => 
-                                line.includes(`"${errorKey}"`) || 
-                                line.includes(`"${errorKey}":`)
-                            );
-                            
-                            if (errorLineIndex !== -1) {
-                                // Подсвечиваем строку с ошибкой
-                                lines[errorLineIndex] = `<span class="error-line">${lines[errorLineIndex]}</span>`;
-                            }
-                            
-                            return lines.join('\n');
-                        };
+                        // Находим все различия между объектами
+                        const differences = compareObjects(userObject, refObject);
+                        const diffPaths = differences.map(diff => diff.path);
+                        
+                        // Форматируем JSON с подсветкой всех различий
+                        const userJsonFormatted = formatJsonWithDiffHighlight(userObject, diffPaths, true);
+                        const refJsonFormatted = formatJsonWithDiffHighlight(refObject, diffPaths, false);
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
@@ -612,7 +667,7 @@
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
                                 <div class="path-context">Путь: ${path}</div>
-                                <pre>${formatJsonWithErrorHighlight(userObject, key)}</pre>
+                                <pre>${userJsonFormatted}</pre>
                             </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный JSON" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
@@ -620,7 +675,7 @@
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
                                 <div class="path-context">Путь: ${path}</div>
-                                <pre>${formatJsonWithErrorHighlight(refObject, key)}</pre>
+                                <pre>${refJsonFormatted}</pre>
                             </div>
                         `;
                     }
@@ -642,26 +697,13 @@
                         // Получаем значение отсутствующего ключа
                         const referenceValue = referenceParent ? referenceParent[key] : undefined;
                         
-                        // Форматируем JSON с подсветкой ошибки
-                        const formatJsonWithErrorHighlight = (obj, errorKey) => {
-                            if (!obj) return '';
-                            
-                            const jsonStr = JSON.stringify(obj, null, 2);
-                            const lines = jsonStr.split('\n');
-                            
-                            // Ищем строку, содержащую ключ с ошибкой
-                            const errorLineIndex = lines.findIndex(line => 
-                                line.includes(`"${errorKey}"`) || 
-                                line.includes(`"${errorKey}":`)
-                            );
-                            
-                            if (errorLineIndex !== -1) {
-                                // Подсвечиваем строку с ошибкой
-                                lines[errorLineIndex] = `<span class="error-line">${lines[errorLineIndex]}</span>`;
-                            }
-                            
-                            return lines.join('\n');
-                        };
+                        // Находим все различия между объектами
+                        const differences = compareObjects(userParent, referenceParent);
+                        const diffPaths = differences.map(diff => diff.path);
+                        
+                        // Форматируем JSON с подсветкой всех различий
+                        const userJsonFormatted = formatJsonWithDiffHighlight(userParent, diffPaths, true);
+                        const refJsonFormatted = formatJsonWithDiffHighlight(referenceParent, diffPaths, false);
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
@@ -673,7 +715,7 @@
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
                                 <div class="path-context">Путь: ${path}</div>
-                                <pre>${formatJsonWithErrorHighlight(referenceParent, key)}</pre>
+                                <pre>${refJsonFormatted}</pre>
                             </div>
                         `;
                     }
@@ -690,30 +732,17 @@
                         
                         // Получаем родительские объекты
                         const userParent = parentPath ? getValueByPath(userJson, parentPath) : userJson;
+                        const referenceParent = parentPath ? getValueByPath(referenceJson, parentPath) : referenceJson;
                         
                         // Получаем значение лишнего ключа
                         const userValue = userParent ? userParent[key] : undefined;
                         
-                        // Форматируем JSON с подсветкой ошибки
-                        const formatJsonWithErrorHighlight = (obj, errorKey) => {
-                            if (!obj) return '';
-                            
-                            const jsonStr = JSON.stringify(obj, null, 2);
-                            const lines = jsonStr.split('\n');
-                            
-                            // Ищем строку, содержащую ключ с ошибкой
-                            const errorLineIndex = lines.findIndex(line => 
-                                line.includes(`"${errorKey}"`) || 
-                                line.includes(`"${errorKey}":`)
-                            );
-                            
-                            if (errorLineIndex !== -1) {
-                                // Подсвечиваем строку с ошибкой
-                                lines[errorLineIndex] = `<span class="error-line">${lines[errorLineIndex]}</span>`;
-                            }
-                            
-                            return lines.join('\n');
-                        };
+                        // Находим все различия между объектами
+                        const differences = compareObjects(userParent, referenceParent);
+                        const diffPaths = differences.map(diff => diff.path);
+                        
+                        // Форматируем JSON с подсветкой всех различий
+                        const userJsonFormatted = formatJsonWithDiffHighlight(userParent, diffPaths, true);
                         
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
@@ -725,7 +754,7 @@
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
                                 <div class="path-context">Путь: ${path}</div>
-                                <pre>${formatJsonWithErrorHighlight(userParent, key)}</pre>
+                                <pre>${userJsonFormatted}</pre>
                             </div>
                         `;
                     }
@@ -746,6 +775,14 @@
                         const userArray = getValueByPath(userJson, path);
                         const referenceArray = getValueByPath(referenceJson, path);
                         
+                        // Находим все различия между массивами
+                        const differences = compareObjects(userArray, referenceArray);
+                        const diffPaths = differences.map(diff => diff.path);
+                        
+                        // Форматируем JSON с подсветкой всех различий
+                        const userJsonFormatted = formatJsonWithDiffHighlight(userArray, diffPaths, true);
+                        const refJsonFormatted = formatJsonWithDiffHighlight(referenceArray, diffPaths, false);
+                        
                         // Создаем отображение в стиле GitHub с возможностью раскрытия
                         container.innerHTML = `
                             <p>Разное количество элементов в массиве <span class="error-path">${path}</span>:</p>
@@ -756,7 +793,7 @@
                             </div>
                             <div id="user-json-${container.dataset.index}" class="json-preview json-preview-removed">
                                 <div class="path-context">Путь: ${path}</div>
-                                <pre><span class="error-line">${JSON.stringify(userArray, null, 2)}</span></pre>
+                                <pre>${userJsonFormatted}</pre>
                             </div>
                             <div class="diff-line diff-added">
                                 <div class="diff-marker" title="Развернуть/свернуть эталонный массив" onclick="document.getElementById('ref-json-${container.dataset.index}').style.display = document.getElementById('ref-json-${container.dataset.index}').style.display === 'none' ? 'block' : 'none'">+</div>
@@ -764,7 +801,7 @@
                             </div>
                             <div id="ref-json-${container.dataset.index}" class="json-preview json-preview-added">
                                 <div class="path-context">Путь: ${path}</div>
-                                <pre><span class="correct-line">${JSON.stringify(referenceArray, null, 2)}</span></pre>
+                                <pre>${refJsonFormatted}</pre>
                             </div>
                         `;
                     }
