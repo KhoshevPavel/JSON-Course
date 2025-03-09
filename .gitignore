@@ -1,6 +1,5 @@
-*.txt
 /venv/
 *.pyc
 GPT.txt 
 readme.txt 
-requirements.txt
+

@@ -1,0 +1,17 @@
+[Unit]
+Description=JSON Validator Gunicorn Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/your/JSON-Course
+ExecStart=/path/to/your/JSON-Course/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 main:app
+Restart=always
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=jsonvalidator
+Environment="PATH=/path/to/your/JSON-Course/venv/bin"
+
+[Install]
+WantedBy=multi-user.target 
