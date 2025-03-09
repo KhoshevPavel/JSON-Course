@@ -1,0 +1,58 @@
+[
+    {
+        "id": 6951,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 126485.87,
+        "quantity": 31,
+        "specifications": {
+            "power": "739W",
+            "warranty": "12 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 5215,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 148090.77,
+        "quantity": 43,
+        "specifications": {
+            "power": "727W",
+            "warranty": "27 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 8378,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Блоки питания",
+        "price": 109541.22,
+        "quantity": 66,
+        "specifications": {
+            "power": "242W",
+            "warranty": "26 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 4565,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": 52931.97,
+        "quantity": 18,
+        "specifications": {
+            "power": "645W",
+            "warranty": "14 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    }
+]

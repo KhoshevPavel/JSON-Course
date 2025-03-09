@@ -1,0 +1,70 @@
+[
+    {
+        "id": 6741,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 64170.5,
+        "quantity": 37,
+        "specifications": {
+            "power": "686W",
+            "warranty": "35 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 8931,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 77605.85,
+        "quantity": 14,
+        "specifications": {
+            "power": "110W",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 1953,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 59801.14,
+        "quantity": 78,
+        "specifications": {
+            "power": "163W",
+            "warranty": "22 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 7184,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "MSI",
+        "category": "Материнские платы",
+        "price": 49365.31,
+        "quantity": 88,
+        "specifications": {
+            "power": "489W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 7776,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 130154.55,
+        "quantity": 70,
+        "specifications": {
+            "power": "977W",
+            "warranty": "22 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

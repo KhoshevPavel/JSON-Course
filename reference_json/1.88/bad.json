@@ -1,0 +1,100 @@
+[
+    {
+        "id": 4718,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": "60335.46 руб",
+        "quantity": 41,
+        "specifications": {
+            "power": "693W",
+            "warranty": "17 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1188,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 126021.99,
+        "quantity": 99,
+        "specifications": {
+            "power": "890W",
+            "warranty": "22 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 4577,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 42044.41,
+        "quantity": 12,
+        "specifications": {
+            "power": "814W",
+            "warranty": "28 месяцев",
+            "year": 2024
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 2943,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 93544.51,
+        "quantity": 74,
+        "specifications": {
+            "power": "600W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 9484,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": 41950.53,
+        "quantity": 26,
+        "specifications": {
+            "power": "655W",
+            "warranty": "34 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 3614,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 71113.86,
+        "quantity": 79,
+        "specifications": {
+            "power": "999W",
+            "warranty": "25 месяцев",
+            "year": 2021
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 3818,
+        "name": "SSD Samsung",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": "127717.34 руб",
+        "quantity": 77,
+        "specifications": {
+            "power": "167W",
+            "warranty": "17 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

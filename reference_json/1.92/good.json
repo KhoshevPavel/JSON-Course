@@ -1,0 +1,84 @@
+[
+    {
+        "id": 9546,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 58107.68,
+        "quantity": 34,
+        "specifications": {
+            "power": "964W",
+            "warranty": "13 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 7820,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 19270.53,
+        "quantity": 55,
+        "specifications": {
+            "power": "366W",
+            "warranty": "35 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 2446,
+        "name": "Блок питания Corsair",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 98721.73,
+        "quantity": 55,
+        "specifications": {
+            "power": "278W",
+            "warranty": "16 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 8564,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 104176.53,
+        "quantity": 80,
+        "specifications": {
+            "power": "473W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 7463,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 121678.41,
+        "quantity": 39,
+        "specifications": {
+            "power": "166W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 6756,
+        "name": "SSD Samsung",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 108601.77,
+        "quantity": 10,
+        "specifications": {
+            "power": "138W",
+            "warranty": "19 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

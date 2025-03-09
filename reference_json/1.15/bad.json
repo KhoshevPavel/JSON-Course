@@ -1,0 +1,90 @@
+[
+    {
+        "id": 9901,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": 58378.56,
+        "quantity": 24,
+        "specifications": {
+            "power": "338W",
+            "warranty": "24 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 6938,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 29497.3,
+        "quantity": 74,
+        "specifications": {
+            "power": "370W",
+            "warranty": "21 месяцев",
+            "year": 2021
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 1394,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "MSI",
+        "category": "Материнские платы",
+        "price": "16471.09 руб",
+        "quantity": 92,
+        "specifications": {
+            "power": "989W",
+            "warranty": "12 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 2280,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 89348.1,
+        "quantity": 16,
+        "specifications": {
+            "power": "587W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 3235,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 18212.99,
+        "quantity": 7,
+        "specifications": {
+            "power": "805W",
+            "warranty": "26 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5919,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": 88160.84,
+        "quantity": 53,
+        "specifications": {
+            "power": "409W",
+            "warranty": "19 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

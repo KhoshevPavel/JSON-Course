@@ -1,0 +1,44 @@
+[
+    {
+        "id": 9077,
+        "name": "SSD Samsung",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": "118986.63 руб",
+        "quantity": 52,
+        "specifications": {
+            "power": "970W",
+            "warranty": "14 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 3056,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": "81293.53 руб",
+        "quantity": 83,
+        "specifications": {
+            "power": "791W",
+            "warranty": "22 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 3653,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": "97399.35 руб",
+        "quantity": 1,
+        "specifications": {
+            "power": "651W",
+            "warranty": "32 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

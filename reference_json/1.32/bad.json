@@ -1,0 +1,59 @@
+[
+    {
+        "id": 3386,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": "74159.72 руб",
+        "quantity": 18,
+        "specifications": {
+            "power": "266W",
+            "warranty": "17 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 6352,
+        "name": "Корпус Deepcool",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": "126343.74 руб",
+        "quantity": 16,
+        "specifications": {
+            "power": "804W",
+            "warranty": "31 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 2939,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": 76216.58,
+        "quantity": 100,
+        "specifications": {
+            "power": "458W",
+            "warranty": "26 месяцев",
+            "year": 2021
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5389,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 47030.48,
+        "quantity": 49,
+        "specifications": {
+            "power": "943W",
+            "warranty": "23 месяцев",
+            "year": 2022
+        },
+        "is_available": "yes"
+    }
+]

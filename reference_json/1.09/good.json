@@ -1,0 +1,71 @@
+[
+    {
+        "id": 7431,
+        "name": "Блок питания Corsair",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 23998.24,
+        "quantity": 86,
+        "specifications": {
+            "power": "117W",
+            "warranty": "29 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 4592,
+        "name": "SSD Samsung",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 86119.96,
+        "quantity": 7,
+        "specifications": {
+            "power": "579W",
+            "warranty": "17 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 4721,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 102359.96,
+        "quantity": 34,
+        "specifications": {
+            "power": "805W",
+            "warranty": "33 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 5433,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 141554.08,
+        "quantity": 45,
+        "specifications": {
+            "power": "210W",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 9153,
+        "name": "SSD Samsung",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 25073.2,
+        "quantity": 27,
+        "specifications": {
+            "power": "842W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

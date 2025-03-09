@@ -1,0 +1,84 @@
+[
+    {
+        "id": 4409,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 104800.39,
+        "quantity": 65,
+        "specifications": {
+            "power": "849W",
+            "warranty": "22 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 3556,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": "13459.89 руб",
+        "quantity": 51,
+        "specifications": {
+            "power": "346W",
+            "warranty": "28 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 6804,
+        "name": "SSD Samsung",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": "70613.46 руб",
+        "quantity": 24,
+        "specifications": {
+            "power": "683W",
+            "warranty": "29 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 2933,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 125453.57,
+        "quantity": 65,
+        "specifications": {
+            "power": "492W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 6442,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": "104866.21 руб",
+        "quantity": 22,
+        "specifications": {
+            "power": "289W",
+            "warranty": "16 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 5318,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 65526.25,
+        "quantity": 79,
+        "specifications": {
+            "power": "642W",
+            "year": 2022
+        },
+        "is_available": true
+    }
+]

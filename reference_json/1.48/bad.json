@@ -1,0 +1,43 @@
+[
+    {
+        "id": 9429,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": "22215.63 руб",
+        "quantity": 85,
+        "specifications": {
+            "power": "920W",
+            "warranty": "22 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 6904,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 57875.09,
+        "quantity": 60,
+        "specifications": {
+            "power": "740W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 4972,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": "6352.41 руб",
+        "quantity": 35,
+        "specifications": {
+            "power": "709W",
+            "warranty": "14 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

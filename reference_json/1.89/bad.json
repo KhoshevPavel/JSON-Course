@@ -1,0 +1,85 @@
+[
+    {
+        "id": 4199,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 118625.61,
+        "quantity": 89,
+        "specifications": {
+            "power": "211W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 9452,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 22511.72,
+        "quantity": 66,
+        "specifications": {
+            "power": "530W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 8104,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": "102159.9 руб",
+        "quantity": 23,
+        "specifications": {
+            "power": "167W",
+            "warranty": "14 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 6925,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Kingston",
+        "category": "Процессоры",
+        "price": 128155.86,
+        "quantity": 100,
+        "specifications": {
+            "power": "818W",
+            "warranty": "13 месяцев",
+            "year": 2020
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 2452,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Материнские платы",
+        "price": "67397.21 руб",
+        "quantity": 51,
+        "specifications": {
+            "power": "147W",
+            "warranty": "34 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 3913,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": "6497.92 руб",
+        "quantity": 85,
+        "specifications": {
+            "power": "988W",
+            "warranty": "24 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

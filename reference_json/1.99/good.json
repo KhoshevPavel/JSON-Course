@@ -1,0 +1,85 @@
+[
+    {
+        "id": 2074,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 39788.05,
+        "quantity": 74,
+        "specifications": {
+            "power": "347W",
+            "warranty": "27 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 2842,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 135775.61,
+        "quantity": 57,
+        "specifications": {
+            "power": "596W",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 6082,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 64322.44,
+        "quantity": 85,
+        "specifications": {
+            "power": "272W",
+            "warranty": "36 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1457,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 48205.15,
+        "quantity": 90,
+        "specifications": {
+            "power": "955W",
+            "warranty": "35 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 8982,
+        "name": "Блок питания Corsair",
+        "manufacturer": "NVIDIA",
+        "category": "Видеокарты",
+        "price": 115713.95,
+        "quantity": 52,
+        "specifications": {
+            "power": "176W",
+            "warranty": "24 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 6943,
+        "name": "Блок питания Corsair",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 42741.09,
+        "quantity": 64,
+        "specifications": {
+            "power": "638W",
+            "warranty": "31 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

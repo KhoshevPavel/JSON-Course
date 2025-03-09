@@ -1,0 +1,57 @@
+[
+    {
+        "id": 4071,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 86047.15,
+        "quantity": 11,
+        "specifications": {
+            "power": "402W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 1706,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": "97615.09 руб",
+        "quantity": 100,
+        "specifications": {
+            "power": "578W",
+            "warranty": "21 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 5930,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": "103582.44 руб",
+        "quantity": 2,
+        "specifications": {
+            "power": "629W",
+            "warranty": "13 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 3059,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 96907.35,
+        "quantity": 59,
+        "specifications": {
+            "power": "653W",
+            "warranty": "21 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    }
+]

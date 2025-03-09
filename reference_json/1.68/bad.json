@@ -1,0 +1,57 @@
+[
+    {
+        "id": 7489,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": 5760.11,
+        "quantity": 6,
+        "specifications": {
+            "power": "951W",
+            "warranty": "32 месяцев",
+            "year": 2021
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 3709,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 126145.76,
+        "quantity": 88,
+        "specifications": {
+            "power": "808W",
+            "warranty": "22 месяцев",
+            "year": 2022
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 7954,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 11370.54,
+        "quantity": 60,
+        "specifications": {
+            "power": "550W",
+            "warranty": "28 месяцев",
+            "year": 2022
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 1203,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 44563.67,
+        "quantity": 56,
+        "specifications": {
+            "power": "683W",
+            "year": 2020
+        },
+        "is_available": true
+    }
+]

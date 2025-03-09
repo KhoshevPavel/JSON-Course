@@ -1,0 +1,85 @@
+[
+    {
+        "id": 2463,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 16382.79,
+        "quantity": 52,
+        "specifications": {
+            "power": "580W",
+            "warranty": "22 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 2686,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Материнские платы",
+        "price": 131815.19,
+        "quantity": 7,
+        "specifications": {
+            "power": "818W",
+            "warranty": "13 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 5517,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "ASUS",
+        "category": "Блоки питания",
+        "price": 118428.52,
+        "quantity": 10,
+        "specifications": {
+            "power": "207W",
+            "warranty": "18 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 1105,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 142746.49,
+        "quantity": 93,
+        "specifications": {
+            "power": "119W",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 6728,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Corsair",
+        "category": "Материнские платы",
+        "price": 10850.47,
+        "quantity": 11,
+        "specifications": {
+            "power": "521W",
+            "warranty": "12 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 3737,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": 81252.59,
+        "quantity": 58,
+        "specifications": {
+            "power": "307W",
+            "warranty": "27 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    }
+]

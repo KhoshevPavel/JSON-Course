@@ -1,0 +1,89 @@
+[
+    {
+        "id": 4610,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": "48599.02 руб",
+        "quantity": 76,
+        "specifications": {
+            "power": "983W",
+            "warranty": "33 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1872,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 95356.42,
+        "quantity": 31,
+        "specifications": {
+            "power": "900W",
+            "warranty": "30 месяцев",
+            "year": 2024
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 3670,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 149738.35,
+        "quantity": 98,
+        "specifications": {
+            "power": "566W",
+            "warranty": "28 месяцев",
+            "year": 2021
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 6660,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": 93880.66,
+        "quantity": 12,
+        "specifications": {
+            "power": "275W",
+            "warranty": "14 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 4662,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": "30700.22 руб",
+        "quantity": 68,
+        "specifications": {
+            "power": "140W",
+            "warranty": "28 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 4627,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": 105839.79,
+        "quantity": 3,
+        "specifications": {
+            "power": "160W",
+            "warranty": "24 месяцев",
+            "year": 2023
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 4276,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Видеокарты",
+        "price": 82373.12,
+        "quantity": 50,
+        "specifications": {
+            "power": "342W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 4279,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": "55224.27 руб",
+        "quantity": 39,
+        "specifications": {
+            "power": "916W",
+            "warranty": "18 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 7542,
+        "name": "Блок питания Corsair",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 13603.56,
+        "quantity": 28,
+        "specifications": {
+            "power": "944W",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

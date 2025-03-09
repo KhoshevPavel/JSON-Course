@@ -1,0 +1,43 @@
+[
+    {
+        "id": 4739,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 100904.05,
+        "quantity": 42,
+        "specifications": {
+            "power": "557W",
+            "warranty": "21 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 6167,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": "16020.47 руб",
+        "quantity": 53,
+        "specifications": {
+            "power": "861W",
+            "warranty": "19 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 4530,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 103405.22,
+        "quantity": 37,
+        "specifications": {
+            "power": "700W",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

@@ -1,0 +1,85 @@
+[
+    {
+        "id": 9662,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 106082.67,
+        "quantity": 26,
+        "specifications": {
+            "power": "868W",
+            "warranty": "18 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 1692,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": "11305.12 руб",
+        "quantity": 44,
+        "specifications": {
+            "power": "177W",
+            "warranty": "15 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5221,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": "61303.47 руб",
+        "quantity": 25,
+        "specifications": {
+            "power": "628W",
+            "warranty": "24 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 5584,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 139630.75,
+        "quantity": 38,
+        "specifications": {
+            "power": "220W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 5393,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 46172.37,
+        "quantity": 10,
+        "specifications": {
+            "power": "646W",
+            "warranty": "24 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 8446,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 80626.54,
+        "quantity": 70,
+        "specifications": {
+            "power": "737W",
+            "year": 2021
+        },
+        "is_available": false
+    }
+]

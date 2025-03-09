@@ -1,0 +1,73 @@
+[
+    {
+        "id": 7512,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 72956.69,
+        "quantity": 74,
+        "specifications": {
+            "power": "898W",
+            "warranty": "19 месяцев",
+            "year": 2023
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 2813,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 1303.92,
+        "quantity": 20,
+        "specifications": {
+            "power": "549W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 1826,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": "40673.75 руб",
+        "quantity": 97,
+        "specifications": {
+            "power": "238W",
+            "warranty": "20 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 9948,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 59336.12,
+        "quantity": 47,
+        "specifications": {
+            "power": "802W",
+            "warranty": "15 месяцев",
+            "year": 2024
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 6716,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 5833.33,
+        "quantity": 62,
+        "specifications": {
+            "power": "790W",
+            "warranty": "33 месяцев",
+            "year": 2022
+        },
+        "is_available": "yes"
+    }
+]

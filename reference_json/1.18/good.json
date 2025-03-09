@@ -1,0 +1,44 @@
+[
+    {
+        "id": 4319,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 125632.89,
+        "quantity": 16,
+        "specifications": {
+            "power": "730W",
+            "warranty": "35 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 6329,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 7457.61,
+        "quantity": 6,
+        "specifications": {
+            "power": "900W",
+            "warranty": "17 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 1177,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 141311.66,
+        "quantity": 35,
+        "specifications": {
+            "power": "733W",
+            "warranty": "17 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

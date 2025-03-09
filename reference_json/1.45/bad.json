@@ -1,0 +1,72 @@
+[
+    {
+        "id": 2160,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 88979.35,
+        "quantity": 83,
+        "specifications": {
+            "power": "876W",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1852,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": "149602.68 руб",
+        "quantity": 58,
+        "specifications": {
+            "power": "869W",
+            "warranty": "35 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 2851,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": "80849.3 руб",
+        "quantity": 53,
+        "specifications": {
+            "power": "467W",
+            "warranty": "24 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 4437,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 3299.29,
+        "quantity": 80,
+        "specifications": {
+            "power": "405W",
+            "warranty": "30 месяцев",
+            "year": 2021
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 2063,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": "113058.68 руб",
+        "quantity": 18,
+        "specifications": {
+            "power": "412W",
+            "warranty": "26 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

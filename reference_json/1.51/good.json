@@ -1,0 +1,43 @@
+[
+    {
+        "id": 9934,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 41192.08,
+        "quantity": 100,
+        "specifications": {
+            "power": "158W",
+            "warranty": "12 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 7604,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Corsair",
+        "category": "Материнские платы",
+        "price": 33991.54,
+        "quantity": 9,
+        "specifications": {
+            "power": "846W",
+            "warranty": "21 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 5040,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": 126039.04,
+        "quantity": 15,
+        "specifications": {
+            "power": "893W",
+            "year": 2021
+        },
+        "is_available": false
+    }
+]

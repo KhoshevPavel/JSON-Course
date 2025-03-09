@@ -1,0 +1,45 @@
+[
+    {
+        "id": 3944,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": "50865.48 руб",
+        "quantity": 99,
+        "specifications": {
+            "power": "713W",
+            "warranty": "29 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 6773,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 85330.41,
+        "quantity": 100,
+        "specifications": {
+            "power": "558W",
+            "warranty": "34 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 3106,
+        "name": "Блок питания Corsair",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": "110558.55 руб",
+        "quantity": 57,
+        "specifications": {
+            "power": "293W",
+            "warranty": "29 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    }
+]

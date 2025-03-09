@@ -1,0 +1,73 @@
+[
+    {
+        "id": 6714,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Corsair",
+        "category": "Материнские платы",
+        "price": 55394.82,
+        "quantity": 3,
+        "specifications": {
+            "power": "973W",
+            "warranty": "24 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5455,
+        "name": "SSD Samsung",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 107865.8,
+        "quantity": 57,
+        "specifications": {
+            "power": "569W",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 7881,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": "92894.39 руб",
+        "quantity": 62,
+        "specifications": {
+            "power": "439W",
+            "warranty": "22 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 1017,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Материнские платы",
+        "price": "93570.64 руб",
+        "quantity": 79,
+        "specifications": {
+            "power": "723W",
+            "warranty": "36 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 8196,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 13305.45,
+        "quantity": 97,
+        "specifications": {
+            "power": "880W",
+            "warranty": "12 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

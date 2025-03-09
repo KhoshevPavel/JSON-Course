@@ -1,0 +1,69 @@
+[
+    {
+        "id": 4375,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 114053.89,
+        "quantity": 39,
+        "specifications": {
+            "power": "334W",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 8352,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Kingston",
+        "category": "Материнские платы",
+        "price": 70330.05,
+        "quantity": 35,
+        "specifications": {
+            "power": "360W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 7976,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 134654.89,
+        "quantity": 87,
+        "specifications": {
+            "power": "129W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 1740,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 1238.03,
+        "quantity": 46,
+        "specifications": {
+            "power": "470W",
+            "warranty": "34 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 5017,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 71138.79,
+        "quantity": 95,
+        "specifications": {
+            "power": "750W",
+            "year": 2020
+        },
+        "is_available": false
+    }
+]

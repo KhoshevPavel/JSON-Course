@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2140,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Память",
+        "price": 142668.7,
+        "quantity": 51,
+        "specifications": {
+            "power": "535W",
+            "warranty": "16 месяцев",
+            "year": 2021
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 1770,
+        "name": "SSD Samsung",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 55244.33,
+        "quantity": 100,
+        "specifications": {
+            "power": "395W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 6221,
+        "name": "SSD Samsung",
+        "manufacturer": "Gigabyte",
+        "category": "Накопители",
+        "price": 32278.87,
+        "quantity": 23,
+        "specifications": {
+            "power": "934W",
+            "warranty": "20 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

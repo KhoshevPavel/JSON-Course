@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1447,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 105878.87,
+        "quantity": 37,
+        "specifications": {
+            "power": "724W",
+            "warranty": "15 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 9233,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 46298.7,
+        "quantity": 67,
+        "specifications": {
+            "power": "145W",
+            "warranty": "23 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 1028,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 15534.48,
+        "quantity": 94,
+        "specifications": {
+            "power": "653W",
+            "warranty": "13 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 2853,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 62067.17,
+        "quantity": 45,
+        "specifications": {
+            "power": "396W",
+            "warranty": "17 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    }
+]

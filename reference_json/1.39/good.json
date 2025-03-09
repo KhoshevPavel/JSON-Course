@@ -1,0 +1,99 @@
+[
+    {
+        "id": 2209,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 124108.83,
+        "quantity": 50,
+        "specifications": {
+            "power": "439W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 8341,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 30203.91,
+        "quantity": 55,
+        "specifications": {
+            "power": "918W",
+            "warranty": "16 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 3258,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 129464.85,
+        "quantity": 81,
+        "specifications": {
+            "power": "656W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 8645,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Видеокарты",
+        "price": 108182.02,
+        "quantity": 96,
+        "specifications": {
+            "power": "838W",
+            "warranty": "30 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 4664,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 81429.49,
+        "quantity": 59,
+        "specifications": {
+            "power": "589W",
+            "warranty": "19 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 4149,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 30681.51,
+        "quantity": 25,
+        "specifications": {
+            "power": "385W",
+            "warranty": "21 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 4697,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Kingston",
+        "category": "Материнские платы",
+        "price": 90256.29,
+        "quantity": 92,
+        "specifications": {
+            "power": "692W",
+            "warranty": "35 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    }
+]

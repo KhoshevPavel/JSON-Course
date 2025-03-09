@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1464,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 149553.48,
+        "quantity": 68,
+        "specifications": {
+            "power": "327W",
+            "warranty": "15 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 9769,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 43020.99,
+        "quantity": 12,
+        "specifications": {
+            "power": "725W",
+            "warranty": "26 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 1527,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 120546.96,
+        "quantity": 96,
+        "specifications": {
+            "power": "758W",
+            "warranty": "19 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 8249,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 7254.66,
+        "quantity": 76,
+        "specifications": {
+            "power": "264W",
+            "warranty": "32 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 2583,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 58655.64,
+        "quantity": 61,
+        "specifications": {
+            "power": "498W",
+            "warranty": "34 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 8184,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 67793.09,
+        "quantity": 88,
+        "specifications": {
+            "power": "609W",
+            "warranty": "12 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 1930,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 64593.92,
+        "quantity": 88,
+        "specifications": {
+            "power": "326W",
+            "warranty": "19 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

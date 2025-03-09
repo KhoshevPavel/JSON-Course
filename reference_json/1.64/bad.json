@@ -1,0 +1,44 @@
+[
+    {
+        "id": 6015,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": "99596.2 руб",
+        "quantity": 50,
+        "specifications": {
+            "power": "554W",
+            "warranty": "19 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 9879,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 35958.61,
+        "quantity": 91,
+        "specifications": {
+            "power": "536W",
+            "warranty": "17 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 4023,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 38395.02,
+        "quantity": 2,
+        "specifications": {
+            "power": "793W",
+            "warranty": "21 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    }
+]

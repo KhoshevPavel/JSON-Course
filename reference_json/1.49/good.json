@@ -1,0 +1,58 @@
+[
+    {
+        "id": 9908,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 117575.97,
+        "quantity": 78,
+        "specifications": {
+            "power": "265W",
+            "warranty": "21 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 5447,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 120871.85,
+        "quantity": 44,
+        "specifications": {
+            "power": "894W",
+            "warranty": "16 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 3330,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 92225.02,
+        "quantity": 21,
+        "specifications": {
+            "power": "354W",
+            "warranty": "33 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 1043,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 114251.05,
+        "quantity": 53,
+        "specifications": {
+            "power": "431W",
+            "warranty": "35 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

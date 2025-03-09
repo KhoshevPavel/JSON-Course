@@ -1,0 +1,101 @@
+[
+    {
+        "id": 9823,
+        "name": "Корпус Deepcool",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": 5400.33,
+        "quantity": 48,
+        "specifications": {
+            "power": "970W",
+            "warranty": "19 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 9706,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 71559.47,
+        "quantity": 18,
+        "specifications": {
+            "power": "397W",
+            "warranty": "35 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 7913,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "MSI",
+        "category": "Видеокарты",
+        "price": 80294.33,
+        "quantity": 4,
+        "specifications": {
+            "power": "915W",
+            "warranty": "19 месяцев",
+            "year": 2021
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 7474,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": "43633.54 руб",
+        "quantity": 96,
+        "specifications": {
+            "power": "410W",
+            "warranty": "23 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 3988,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Материнские платы",
+        "price": "144950.32 руб",
+        "quantity": 8,
+        "specifications": {
+            "power": "882W",
+            "warranty": "14 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 4200,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 58755.85,
+        "quantity": 94,
+        "specifications": {
+            "power": "289W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 9928,
+        "name": "SSD Samsung",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 41570.41,
+        "quantity": 3,
+        "specifications": {
+            "power": "303W",
+            "warranty": "15 месяцев",
+            "year": 2021
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    }
+]

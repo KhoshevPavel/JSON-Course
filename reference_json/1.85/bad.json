@@ -1,0 +1,73 @@
+[
+    {
+        "id": 5737,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 1295.42,
+        "quantity": 27,
+        "specifications": {
+            "power": "553W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 2824,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Kingston",
+        "category": "Материнские платы",
+        "price": 43946.55,
+        "quantity": 79,
+        "specifications": {
+            "power": "895W",
+            "warranty": "22 месяцев",
+            "year": 2022
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 1199,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": 12384.38,
+        "quantity": 90,
+        "specifications": {
+            "power": "976W",
+            "warranty": "36 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 9725,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 70602.43,
+        "quantity": 56,
+        "specifications": {
+            "power": "276W",
+            "warranty": "23 месяцев",
+            "year": 2024
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 8747,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 93338.16,
+        "quantity": 16,
+        "specifications": {
+            "power": "132W",
+            "warranty": "25 месяцев",
+            "year": 2022
+        },
+        "is_available": "no"
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "id": 4248,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 106604.6,
+        "quantity": 51,
+        "specifications": {
+            "power": "758W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 1833,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": 41615.76,
+        "quantity": 93,
+        "specifications": {
+            "power": "427W",
+            "warranty": "27 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 7567,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 6266.95,
+        "quantity": 69,
+        "specifications": {
+            "power": "251W",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 4673,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 112722.64,
+        "quantity": 22,
+        "specifications": {
+            "power": "352W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 2731,
+        "name": "Корпус Deepcool",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 112616.87,
+        "quantity": 48,
+        "specifications": {
+            "power": "830W",
+            "warranty": "24 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 2729,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 75414.97,
+        "quantity": 9,
+        "specifications": {
+            "power": "805W",
+            "warranty": "30 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

@@ -1,0 +1,99 @@
+[
+    {
+        "id": 9540,
+        "name": "Корпус Deepcool",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 91424.46,
+        "quantity": 1,
+        "specifications": {
+            "power": "855W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 4815,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 22664.52,
+        "quantity": 18,
+        "specifications": {
+            "power": "208W",
+            "warranty": "13 месяцев",
+            "year": 2022
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 2514,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Gigabyte",
+        "category": "Накопители",
+        "price": 84809.89,
+        "quantity": 95,
+        "specifications": {
+            "power": "169W",
+            "warranty": "26 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 3183,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": 128475.96,
+        "quantity": 13,
+        "specifications": {
+            "power": "952W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 3353,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": "119440.86 руб",
+        "quantity": 49,
+        "specifications": {
+            "power": "569W",
+            "warranty": "13 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 4276,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": "29876.08 руб",
+        "quantity": 75,
+        "specifications": {
+            "power": "408W",
+            "warranty": "30 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 6369,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 21107.75,
+        "quantity": 20,
+        "specifications": {
+            "power": "572W",
+            "warranty": "34 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "id": 7572,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": "115660.22 руб",
+        "quantity": 48,
+        "specifications": {
+            "power": "902W",
+            "warranty": "35 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 2339,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Блоки питания",
+        "price": 114556.61,
+        "quantity": 100,
+        "specifications": {
+            "power": "916W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 7426,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 99715.47,
+        "quantity": 9,
+        "specifications": {
+            "power": "235W",
+            "warranty": "14 месяцев",
+            "year": 2021
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 1499,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 28335.12,
+        "quantity": 10,
+        "specifications": {
+            "power": "477W",
+            "warranty": "20 месяцев",
+            "year": 2021
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 2312,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": "77258.02 руб",
+        "quantity": 10,
+        "specifications": {
+            "power": "669W",
+            "warranty": "32 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 8099,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Процессоры",
+        "price": 84472.33,
+        "quantity": 80,
+        "specifications": {
+            "power": "343W",
+            "warranty": "14 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    }
+]

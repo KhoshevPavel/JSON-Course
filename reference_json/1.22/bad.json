@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2815,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 134894.92,
+        "quantity": 1,
+        "specifications": {
+            "power": "221W",
+            "warranty": "12 месяцев",
+            "year": 2021
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 7894,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": "33368.52 руб",
+        "quantity": 30,
+        "specifications": {
+            "power": "238W",
+            "warranty": "31 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 2947,
+        "name": "SSD Samsung",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 36666.1,
+        "quantity": 20,
+        "specifications": {
+            "power": "326W",
+            "year": 2020
+        },
+        "is_available": false
+    }
+]

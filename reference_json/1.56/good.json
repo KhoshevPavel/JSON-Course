@@ -1,0 +1,97 @@
+[
+    {
+        "id": 5582,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 92458.3,
+        "quantity": 47,
+        "specifications": {
+            "power": "989W",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 7207,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Материнские платы",
+        "price": 8603.5,
+        "quantity": 55,
+        "specifications": {
+            "power": "973W",
+            "warranty": "15 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 4722,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": 116117.28,
+        "quantity": 24,
+        "specifications": {
+            "power": "402W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 4596,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 84559.14,
+        "quantity": 36,
+        "specifications": {
+            "power": "642W",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 8366,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 133474.64,
+        "quantity": 85,
+        "specifications": {
+            "power": "733W",
+            "warranty": "25 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 1268,
+        "name": "SSD Samsung",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 104347.44,
+        "quantity": 82,
+        "specifications": {
+            "power": "445W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 2327,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Память",
+        "price": 116718.08,
+        "quantity": 6,
+        "specifications": {
+            "power": "286W",
+            "warranty": "19 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    }
+]

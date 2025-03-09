@@ -1,0 +1,85 @@
+[
+    {
+        "id": 9134,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": 71462.4,
+        "quantity": 16,
+        "specifications": {
+            "power": "636W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 9886,
+        "name": "Корпус Deepcool",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": "79478.61 руб",
+        "quantity": 3,
+        "specifications": {
+            "power": "903W",
+            "warranty": "29 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 7503,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 3118.91,
+        "quantity": 33,
+        "specifications": {
+            "power": "232W",
+            "warranty": "19 месяцев",
+            "year": 2021
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 7327,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": 99862.09,
+        "quantity": 36,
+        "specifications": {
+            "power": "397W",
+            "warranty": "24 месяцев",
+            "year": 2024
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 9255,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": "63563.8 руб",
+        "quantity": 85,
+        "specifications": {
+            "power": "537W",
+            "warranty": "19 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 7506,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 65263.51,
+        "quantity": 42,
+        "specifications": {
+            "power": "939W",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

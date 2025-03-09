@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1484,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 142549.86,
+        "quantity": 97,
+        "specifications": {
+            "power": "124W",
+            "warranty": "35 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 9199,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "MSI",
+        "category": "Материнские платы",
+        "price": 27969.58,
+        "quantity": 17,
+        "specifications": {
+            "power": "596W",
+            "warranty": "35 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 6626,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 31302.58,
+        "quantity": 97,
+        "specifications": {
+            "power": "652W",
+            "warranty": "29 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

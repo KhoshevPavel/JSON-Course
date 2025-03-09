@@ -1,0 +1,70 @@
+[
+    {
+        "id": 5921,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 133849.01,
+        "quantity": 18,
+        "specifications": {
+            "power": "414W",
+            "warranty": "31 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1368,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 48317.81,
+        "quantity": 15,
+        "specifications": {
+            "power": "840W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 1580,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 7591.84,
+        "quantity": 18,
+        "specifications": {
+            "power": "102W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 8766,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 136782.82,
+        "quantity": 37,
+        "specifications": {
+            "power": "319W",
+            "warranty": "23 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 3360,
+        "name": "Блок питания Corsair",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 65159.1,
+        "quantity": 36,
+        "specifications": {
+            "power": "391W",
+            "warranty": "13 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

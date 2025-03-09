@@ -1,0 +1,58 @@
+[
+    {
+        "id": 6069,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Блоки питания",
+        "price": 78033.73,
+        "quantity": 28,
+        "specifications": {
+            "power": "236W",
+            "warranty": "19 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 8722,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 42524.06,
+        "quantity": 71,
+        "specifications": {
+            "power": "188W",
+            "warranty": "16 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5674,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 89861.04,
+        "quantity": 34,
+        "specifications": {
+            "power": "106W",
+            "warranty": "17 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 8247,
+        "name": "SSD Samsung",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": 28018.3,
+        "quantity": 75,
+        "specifications": {
+            "power": "260W",
+            "warranty": "22 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    }
+]

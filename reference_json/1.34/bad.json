@@ -1,0 +1,71 @@
+[
+    {
+        "id": 5119,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 68626.92,
+        "quantity": 50,
+        "specifications": {
+            "power": "597W",
+            "warranty": "29 месяцев",
+            "year": 2021
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 8863,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 134055.65,
+        "quantity": 62,
+        "specifications": {
+            "power": "228W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 7752,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 122303.48,
+        "quantity": 70,
+        "specifications": {
+            "power": "334W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 7649,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 129887.21,
+        "quantity": 35,
+        "specifications": {
+            "power": "787W",
+            "warranty": "34 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5531,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 75963.97,
+        "quantity": 77,
+        "specifications": {
+            "power": "271W",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

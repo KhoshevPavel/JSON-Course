@@ -1,0 +1,45 @@
+[
+    {
+        "id": 7267,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "MSI",
+        "category": "Видеокарты",
+        "price": 16160.93,
+        "quantity": 85,
+        "specifications": {
+            "power": "829W",
+            "warranty": "27 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 8451,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Память",
+        "price": 136001.77,
+        "quantity": 85,
+        "specifications": {
+            "power": "822W",
+            "warranty": "28 месяцев",
+            "year": 2020
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 5796,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 122203.1,
+        "quantity": 35,
+        "specifications": {
+            "power": "741W",
+            "warranty": "35 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

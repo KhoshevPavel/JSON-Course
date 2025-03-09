@@ -1,0 +1,57 @@
+[
+    {
+        "id": 8618,
+        "name": "SSD Samsung",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 49077.75,
+        "quantity": 97,
+        "specifications": {
+            "power": "848W",
+            "warranty": "22 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 6096,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": 40758.93,
+        "quantity": 38,
+        "specifications": {
+            "power": "266W",
+            "warranty": "27 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 2216,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 115097.63,
+        "quantity": 80,
+        "specifications": {
+            "power": "781W",
+            "warranty": "15 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 2131,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 17838.4,
+        "quantity": 93,
+        "specifications": {
+            "power": "954W",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

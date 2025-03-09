@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1575,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": "29095.9 руб",
+        "quantity": 44,
+        "specifications": {
+            "power": "698W",
+            "warranty": "18 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 2518,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 124497.38,
+        "quantity": 41,
+        "specifications": {
+            "power": "404W",
+            "warranty": "18 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 2713,
+        "name": "Корпус Deepcool",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 71830.74,
+        "quantity": 78,
+        "specifications": {
+            "power": "475W",
+            "year": 2024
+        },
+        "is_available": true
+    }
+]

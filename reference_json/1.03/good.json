@@ -1,0 +1,84 @@
+[
+    {
+        "id": 4394,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 76735.38,
+        "quantity": 42,
+        "specifications": {
+            "power": "395W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 9042,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 10217.6,
+        "quantity": 14,
+        "specifications": {
+            "power": "919W",
+            "warranty": "27 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 2269,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 58674.22,
+        "quantity": 1,
+        "specifications": {
+            "power": "319W",
+            "warranty": "29 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5602,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 35935.07,
+        "quantity": 57,
+        "specifications": {
+            "power": "685W",
+            "warranty": "22 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 3914,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 115399.74,
+        "quantity": 32,
+        "specifications": {
+            "power": "615W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 6872,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 14582.61,
+        "quantity": 21,
+        "specifications": {
+            "power": "244W",
+            "warranty": "15 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

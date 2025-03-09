@@ -1,0 +1,44 @@
+[
+    {
+        "id": 5316,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 75067.53,
+        "quantity": 23,
+        "specifications": {
+            "power": "398W",
+            "warranty": "24 месяцев",
+            "year": 2021
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 2726,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 88673.92,
+        "quantity": 62,
+        "specifications": {
+            "power": "697W",
+            "warranty": "16 месяцев",
+            "year": 2022
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 9050,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Блоки питания",
+        "price": 32440.5,
+        "quantity": 7,
+        "specifications": {
+            "power": "825W",
+            "warranty": "21 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "id": 2062,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 121210.82,
+        "quantity": 38,
+        "specifications": {
+            "power": "165W",
+            "warranty": "35 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 3152,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 20327.64,
+        "quantity": 74,
+        "specifications": {
+            "power": "558W",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 7738,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Память",
+        "price": 63928.6,
+        "quantity": 94,
+        "specifications": {
+            "power": "885W",
+            "warranty": "36 месяцев",
+            "year": 2021
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 7972,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 5905.98,
+        "quantity": 93,
+        "specifications": {
+            "power": "642W",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

@@ -1,0 +1,85 @@
+[
+    {
+        "id": 3912,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 19110.16,
+        "quantity": 8,
+        "specifications": {
+            "power": "574W",
+            "warranty": "26 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 2900,
+        "name": "Блок питания Corsair",
+        "manufacturer": "NVIDIA",
+        "category": "Видеокарты",
+        "price": 122708.73,
+        "quantity": 79,
+        "specifications": {
+            "power": "898W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 8159,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": 132358.99,
+        "quantity": 72,
+        "specifications": {
+            "power": "781W",
+            "warranty": "19 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 1297,
+        "name": "SSD Samsung",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 61621.55,
+        "quantity": 17,
+        "specifications": {
+            "power": "179W",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 1864,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 131056.55,
+        "quantity": 95,
+        "specifications": {
+            "power": "979W",
+            "warranty": "24 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5704,
+        "name": "Блок питания Corsair",
+        "manufacturer": "ASUS",
+        "category": "Блоки питания",
+        "price": 135329.0,
+        "quantity": 80,
+        "specifications": {
+            "power": "695W",
+            "warranty": "34 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    }
+]

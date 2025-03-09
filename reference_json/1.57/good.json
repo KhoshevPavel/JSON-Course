@@ -1,0 +1,97 @@
+[
+    {
+        "id": 7435,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 45652.15,
+        "quantity": 88,
+        "specifications": {
+            "power": "812W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 7753,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 94196.08,
+        "quantity": 34,
+        "specifications": {
+            "power": "495W",
+            "warranty": "22 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 6048,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 136840.66,
+        "quantity": 33,
+        "specifications": {
+            "power": "478W",
+            "warranty": "25 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5577,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 96270.69,
+        "quantity": 52,
+        "specifications": {
+            "power": "130W",
+            "warranty": "34 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 7334,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 130477.65,
+        "quantity": 40,
+        "specifications": {
+            "power": "467W",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 9354,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": 107419.56,
+        "quantity": 76,
+        "specifications": {
+            "power": "650W",
+            "warranty": "26 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 2811,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 54430.49,
+        "quantity": 97,
+        "specifications": {
+            "power": "894W",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

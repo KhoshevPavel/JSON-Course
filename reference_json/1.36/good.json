@@ -1,0 +1,58 @@
+[
+    {
+        "id": 9198,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 144722.29,
+        "quantity": 18,
+        "specifications": {
+            "power": "844W",
+            "warranty": "35 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 4922,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "AMD",
+        "category": "Материнские платы",
+        "price": 46602.28,
+        "quantity": 64,
+        "specifications": {
+            "power": "391W",
+            "warranty": "29 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 2325,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 12377.83,
+        "quantity": 25,
+        "specifications": {
+            "power": "609W",
+            "warranty": "12 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 2846,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 93309.12,
+        "quantity": 91,
+        "specifications": {
+            "power": "590W",
+            "warranty": "31 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    }
+]

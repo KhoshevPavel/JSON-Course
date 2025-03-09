@@ -1,0 +1,99 @@
+[
+    {
+        "id": 7229,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 146035.93,
+        "quantity": 92,
+        "specifications": {
+            "power": "950W",
+            "warranty": "28 месяцев",
+            "year": 2022
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 9246,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 73284.23,
+        "quantity": 94,
+        "specifications": {
+            "power": "488W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 3826,
+        "name": "SSD Samsung",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 25551.97,
+        "quantity": 29,
+        "specifications": {
+            "power": "422W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 9888,
+        "name": "Блок питания Corsair",
+        "manufacturer": "MSI",
+        "category": "Блоки питания",
+        "price": 145944.14,
+        "quantity": 18,
+        "specifications": {
+            "power": "487W",
+            "warranty": "12 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 2436,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 139532.86,
+        "quantity": 38,
+        "specifications": {
+            "power": "211W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 4309,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 68933.51,
+        "quantity": 44,
+        "specifications": {
+            "power": "377W",
+            "warranty": "36 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5426,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 93590.79,
+        "quantity": 42,
+        "specifications": {
+            "power": "947W",
+            "warranty": "29 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    }
+]

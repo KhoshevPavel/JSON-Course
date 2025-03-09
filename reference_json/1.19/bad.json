@@ -1,0 +1,86 @@
+[
+    {
+        "id": 6877,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Intel",
+        "category": "Память",
+        "price": 139418.61,
+        "quantity": 44,
+        "specifications": {
+            "power": "243W",
+            "warranty": "21 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 6402,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": "68372.82 руб",
+        "quantity": 11,
+        "specifications": {
+            "power": "772W",
+            "warranty": "32 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 6005,
+        "name": "Блок питания Corsair",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 60793.47,
+        "quantity": 44,
+        "specifications": {
+            "power": "699W",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 9170,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 14918.63,
+        "quantity": 51,
+        "specifications": {
+            "power": "115W",
+            "warranty": "34 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 8423,
+        "name": "SSD Samsung",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": "102154.96 руб",
+        "quantity": 88,
+        "specifications": {
+            "power": "993W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 7353,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "AMD",
+        "category": "Материнские платы",
+        "price": 118143.84,
+        "quantity": 48,
+        "specifications": {
+            "power": "381W",
+            "warranty": "12 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    }
+]

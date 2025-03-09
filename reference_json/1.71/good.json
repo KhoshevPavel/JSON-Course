@@ -1,0 +1,84 @@
+[
+    {
+        "id": 2988,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Процессоры",
+        "price": 65251.33,
+        "quantity": 3,
+        "specifications": {
+            "power": "259W",
+            "warranty": "31 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 1494,
+        "name": "Блок питания Corsair",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 55711.68,
+        "quantity": 13,
+        "specifications": {
+            "power": "664W",
+            "warranty": "24 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 4554,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Память",
+        "price": 31444.98,
+        "quantity": 65,
+        "specifications": {
+            "power": "767W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 8363,
+        "name": "Блок питания Corsair",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": 130541.49,
+        "quantity": 4,
+        "specifications": {
+            "power": "600W",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 5651,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 81450.02,
+        "quantity": 53,
+        "specifications": {
+            "power": "872W",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 9255,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Видеокарты",
+        "price": 119155.92,
+        "quantity": 17,
+        "specifications": {
+            "power": "863W",
+            "warranty": "21 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    }
+]

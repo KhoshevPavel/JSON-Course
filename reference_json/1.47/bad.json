@@ -1,0 +1,86 @@
+[
+    {
+        "id": 3191,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Материнские платы",
+        "price": "110146.41 руб",
+        "quantity": 12,
+        "specifications": {
+            "power": "697W",
+            "warranty": "33 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 7555,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": 130636.59,
+        "quantity": 76,
+        "specifications": {
+            "power": "302W",
+            "warranty": "36 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 3293,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 36344.44,
+        "quantity": 1,
+        "specifications": {
+            "power": "278W",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 9975,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 50186.15,
+        "quantity": 59,
+        "specifications": {
+            "power": "868W",
+            "warranty": "33 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 5660,
+        "name": "Корпус Deepcool",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": "68117.89 руб",
+        "quantity": 33,
+        "specifications": {
+            "power": "804W",
+            "warranty": "16 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 1541,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": 118240.6,
+        "quantity": 50,
+        "specifications": {
+            "power": "423W",
+            "warranty": "21 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    }
+]

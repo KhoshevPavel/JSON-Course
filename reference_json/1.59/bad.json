@@ -1,0 +1,86 @@
+[
+    {
+        "id": 6734,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": "92730.79 руб",
+        "quantity": 23,
+        "specifications": {
+            "power": "328W",
+            "warranty": "26 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 6466,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": 113378.91,
+        "quantity": 86,
+        "specifications": {
+            "power": "675W",
+            "warranty": "35 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 8592,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 103690.41,
+        "quantity": 19,
+        "specifications": {
+            "power": "942W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 7247,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Видеокарты",
+        "price": 119182.85,
+        "quantity": 17,
+        "specifications": {
+            "power": "138W",
+            "warranty": "34 месяцев",
+            "year": 2023
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 9678,
+        "name": "Корпус Deepcool",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": 125170.59,
+        "quantity": 64,
+        "specifications": {
+            "power": "693W",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 2011,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 78130.63,
+        "quantity": 8,
+        "specifications": {
+            "power": "858W",
+            "warranty": "17 месяцев",
+            "year": 2022
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    }
+]

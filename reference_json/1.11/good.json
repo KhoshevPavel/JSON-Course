@@ -1,0 +1,42 @@
+[
+    {
+        "id": 9542,
+        "name": "SSD Samsung",
+        "manufacturer": "Intel",
+        "category": "Память",
+        "price": 115119.47,
+        "quantity": 9,
+        "specifications": {
+            "power": "646W",
+            "warranty": "21 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 1137,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 3642.37,
+        "quantity": 57,
+        "specifications": {
+            "power": "826W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 2053,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 106419.85,
+        "quantity": 5,
+        "specifications": {
+            "power": "117W",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

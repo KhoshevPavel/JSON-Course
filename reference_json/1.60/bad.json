@@ -1,0 +1,74 @@
+[
+    {
+        "id": 7431,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 137906.68,
+        "quantity": 90,
+        "specifications": {
+            "power": "391W",
+            "warranty": "16 месяцев",
+            "year": 2021
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 3000,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": "116130.9 руб",
+        "quantity": 2,
+        "specifications": {
+            "power": "523W",
+            "warranty": "27 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 8587,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Видеокарты",
+        "price": "8663.31 руб",
+        "quantity": 88,
+        "specifications": {
+            "power": "870W",
+            "warranty": "12 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 2767,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": 118165.65,
+        "quantity": 11,
+        "specifications": {
+            "power": "707W",
+            "warranty": "12 месяцев",
+            "year": 2020
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 8914,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": "78277.55 руб",
+        "quantity": 34,
+        "specifications": {
+            "power": "647W",
+            "warranty": "27 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    }
+]

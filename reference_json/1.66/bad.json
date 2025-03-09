@@ -1,0 +1,71 @@
+[
+    {
+        "id": 2868,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 116437.93,
+        "quantity": 46,
+        "specifications": {
+            "power": "138W",
+            "warranty": "32 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 4051,
+        "name": "SSD Samsung",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": "11150.02 руб",
+        "quantity": 14,
+        "specifications": {
+            "power": "636W",
+            "warranty": "25 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 3359,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 51995.71,
+        "quantity": 19,
+        "specifications": {
+            "power": "964W",
+            "warranty": "22 месяцев",
+            "year": 2023
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 1505,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 87707.65,
+        "quantity": 98,
+        "specifications": {
+            "power": "814W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 5609,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": 113252.12,
+        "quantity": 50,
+        "specifications": {
+            "power": "648W",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

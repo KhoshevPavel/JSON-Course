@@ -1,0 +1,100 @@
+[
+    {
+        "id": 3949,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 96995.5,
+        "quantity": 63,
+        "specifications": {
+            "power": "883W",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 2410,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 64888.79,
+        "quantity": 74,
+        "specifications": {
+            "power": "686W",
+            "warranty": "35 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 8630,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 75266.13,
+        "quantity": 72,
+        "specifications": {
+            "power": "473W",
+            "warranty": "31 месяцев",
+            "year": 2021
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 1608,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": 33914.33,
+        "quantity": 98,
+        "specifications": {
+            "power": "677W",
+            "warranty": "30 месяцев",
+            "year": 2022
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5587,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 2883.35,
+        "quantity": 12,
+        "specifications": {
+            "power": "778W",
+            "warranty": "27 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 5787,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": "52704.0 руб",
+        "quantity": 29,
+        "specifications": {
+            "power": "603W",
+            "warranty": "19 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 8035,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": "6837.28 руб",
+        "quantity": 90,
+        "specifications": {
+            "power": "263W",
+            "warranty": "13 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

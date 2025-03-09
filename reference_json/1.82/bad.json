@@ -1,0 +1,73 @@
+[
+    {
+        "id": 6541,
+        "name": "SSD Samsung",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 17782.12,
+        "quantity": 84,
+        "specifications": {
+            "power": "871W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 3445,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "MSI",
+        "category": "Видеокарты",
+        "price": 41805.68,
+        "quantity": 20,
+        "specifications": {
+            "power": "832W",
+            "warranty": "30 месяцев",
+            "year": 2021
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 2342,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 144027.52,
+        "quantity": 24,
+        "specifications": {
+            "power": "813W",
+            "warranty": "36 месяцев",
+            "year": 2022
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 5434,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Материнские платы",
+        "price": "36422.95 руб",
+        "quantity": 31,
+        "specifications": {
+            "power": "284W",
+            "warranty": "12 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 9581,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": 6256.47,
+        "quantity": 1,
+        "specifications": {
+            "power": "500W",
+            "warranty": "20 месяцев",
+            "year": 2020
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

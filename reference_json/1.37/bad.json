@@ -1,0 +1,59 @@
+[
+    {
+        "id": 6408,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 85305.03,
+        "quantity": 33,
+        "specifications": {
+            "power": "357W",
+            "warranty": "30 месяцев",
+            "year": 2021
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 8680,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 30605.4,
+        "quantity": 42,
+        "specifications": {
+            "power": "788W",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 4184,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Накопители",
+        "price": 42943.3,
+        "quantity": 100,
+        "specifications": {
+            "power": "394W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 6288,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 3728.94,
+        "quantity": 61,
+        "specifications": {
+            "power": "877W",
+            "warranty": "28 месяцев",
+            "year": 2022
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

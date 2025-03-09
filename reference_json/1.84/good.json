@@ -1,0 +1,85 @@
+[
+    {
+        "id": 8474,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Intel",
+        "category": "Материнские платы",
+        "price": 38169.15,
+        "quantity": 64,
+        "specifications": {
+            "power": "728W",
+            "warranty": "36 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 4065,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 97018.94,
+        "quantity": 11,
+        "specifications": {
+            "power": "963W",
+            "warranty": "29 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 5789,
+        "name": "Корпус Deepcool",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": 95443.31,
+        "quantity": 3,
+        "specifications": {
+            "power": "810W",
+            "warranty": "12 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 8129,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 26080.62,
+        "quantity": 66,
+        "specifications": {
+            "power": "269W",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 9972,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Gigabyte",
+        "category": "Накопители",
+        "price": 93628.83,
+        "quantity": 20,
+        "specifications": {
+            "power": "237W",
+            "warranty": "29 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 7104,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Gigabyte",
+        "category": "Память",
+        "price": 47474.04,
+        "quantity": 65,
+        "specifications": {
+            "power": "376W",
+            "warranty": "18 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

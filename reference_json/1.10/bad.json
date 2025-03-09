@@ -1,0 +1,83 @@
+[
+    {
+        "id": 9483,
+        "name": "SSD Samsung",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 85826.48,
+        "quantity": 44,
+        "specifications": {
+            "power": "235W",
+            "warranty": "33 месяцев",
+            "year": 2021
+        },
+        "is_available": "yes"
+    },
+    {
+        "id": 5695,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 37389.06,
+        "quantity": 36,
+        "specifications": {
+            "power": "415W",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 1206,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Процессоры",
+        "price": 128199.61,
+        "quantity": 31,
+        "specifications": {
+            "power": "853W",
+            "warranty": "28 месяцев",
+            "year": 2020
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 4218,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 106698.2,
+        "quantity": 11,
+        "specifications": {
+            "power": "815W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 2768,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Gigabyte",
+        "category": "Процессоры",
+        "price": "12060.35 руб",
+        "quantity": 44,
+        "specifications": {
+            "power": "657W",
+            "warranty": "27 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 8369,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 65005.15,
+        "quantity": 69,
+        "specifications": {
+            "power": "978W",
+            "year": 2020
+        },
+        "is_available": true
+    }
+]

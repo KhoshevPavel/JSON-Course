@@ -1,0 +1,74 @@
+[
+    {
+        "id": 9400,
+        "name": "SSD Samsung",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": "103983.73 руб",
+        "quantity": 31,
+        "specifications": {
+            "power": "174W",
+            "warranty": "30 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 4902,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Накопители",
+        "price": 118673.45,
+        "quantity": 31,
+        "specifications": {
+            "power": "293W",
+            "warranty": "35 месяцев",
+            "year": 2023
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 4663,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 141070.35,
+        "quantity": 82,
+        "specifications": {
+            "power": "761W",
+            "warranty": "27 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 2042,
+        "name": "Блок питания Corsair",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": "143086.59 руб",
+        "quantity": 93,
+        "specifications": {
+            "power": "135W",
+            "warranty": "32 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5118,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 42405.01,
+        "quantity": 0,
+        "specifications": {
+            "power": "146W",
+            "warranty": "22 месяцев",
+            "year": 2024
+        },
+        "is_available": "yes"
+    }
+]

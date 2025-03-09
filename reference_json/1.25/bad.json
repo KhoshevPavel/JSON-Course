@@ -1,0 +1,101 @@
+[
+    {
+        "id": 2343,
+        "name": "SSD Samsung",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": "51593.31 руб",
+        "quantity": 82,
+        "specifications": {
+            "power": "515W",
+            "warranty": "32 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 7406,
+        "name": "SSD Samsung",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": "102710.27 руб",
+        "quantity": 84,
+        "specifications": {
+            "power": "700W",
+            "warranty": "18 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 1294,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 55131.64,
+        "quantity": 67,
+        "specifications": {
+            "power": "451W",
+            "warranty": "19 месяцев",
+            "year": 2023
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 4754,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 40918.54,
+        "quantity": 26,
+        "specifications": {
+            "power": "881W",
+            "warranty": "26 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 3125,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": 89881.75,
+        "quantity": 36,
+        "specifications": {
+            "power": "898W",
+            "warranty": "24 месяцев",
+            "year": 2021
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 6156,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": "70733.38 руб",
+        "quantity": 3,
+        "specifications": {
+            "power": "512W",
+            "warranty": "16 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 2036,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": 103978.13,
+        "quantity": 85,
+        "specifications": {
+            "power": "837W",
+            "year": 2022
+        },
+        "is_available": true
+    }
+]

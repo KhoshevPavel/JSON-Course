@@ -1,0 +1,44 @@
+[
+    {
+        "id": 7050,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Corsair",
+        "category": "Память",
+        "price": 148417.95,
+        "quantity": 23,
+        "specifications": {
+            "power": "696W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 9390,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 69647.58,
+        "quantity": 70,
+        "specifications": {
+            "power": "538W",
+            "warranty": "26 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 4208,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 84829.64,
+        "quantity": 37,
+        "specifications": {
+            "power": "299W",
+            "warranty": "20 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    }
+]

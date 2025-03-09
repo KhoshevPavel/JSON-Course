@@ -1,0 +1,70 @@
+[
+    {
+        "id": 2790,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 48914.69,
+        "quantity": 45,
+        "specifications": {
+            "power": "404W",
+            "warranty": "36 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 6484,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 23301.2,
+        "quantity": 3,
+        "specifications": {
+            "power": "403W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 8334,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "MSI",
+        "category": "Процессоры",
+        "price": 120311.57,
+        "quantity": 31,
+        "specifications": {
+            "power": "321W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 9227,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Gigabyte",
+        "category": "Накопители",
+        "price": 34775.81,
+        "quantity": 1,
+        "specifications": {
+            "power": "768W",
+            "warranty": "32 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 2665,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 111294.24,
+        "quantity": 20,
+        "specifications": {
+            "power": "374W",
+            "warranty": "29 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

@@ -24,10 +24,12 @@ templates = Jinja2Templates(directory="templates")
 # Получаем список доступных заданий
 def get_available_tasks():
     tasks = []
-    for task_dir in glob.glob("reference_json/1.*"):
-        task_id = os.path.basename(task_dir)
-        if os.path.exists(os.path.join(task_dir, "good.json")):
-            tasks.append(task_id)
+    # Получаем все директории в папке reference_json
+    for item in os.listdir("reference_json"):
+        task_dir = os.path.join("reference_json", item)
+        # Проверяем, что это директория и в ней есть файл good.json
+        if os.path.isdir(task_dir) and os.path.exists(os.path.join(task_dir, "good.json")):
+            tasks.append(item)
     return sorted(tasks)
 
 # Функция для сравнения JSON файлов
@@ -85,8 +87,21 @@ def compare_json_files(user_json: Dict[str, Any], reference_json: Dict[str, Any]
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    # Перенаправляем на страницу с заданием 1.01 по умолчанию
-    return RedirectResponse(url="/1.01")
+    # Получаем список доступных заданий
+    available_tasks = get_available_tasks()
+    
+    # Если есть доступные задания, перенаправляем на первое
+    if available_tasks:
+        return RedirectResponse(url=f"/{available_tasks[0]}")
+    else:
+        return templates.TemplateResponse(
+            "index.html", 
+            {
+                "request": request, 
+                "error": "Нет доступных заданий. Пожалуйста, создайте хотя бы одно задание в папке reference_json.",
+                "available_tasks": []
+            }
+        )
 
 @app.get("/{task_id}", response_class=HTMLResponse)
 async def task_page(request: Request, task_id: str):
@@ -103,7 +118,8 @@ async def task_page(request: Request, task_id: str):
             {
                 "request": request, 
                 "error": f"Задание {task_id} не найдено. Пожалуйста, выберите другое задание.",
-                "available_tasks": available_tasks
+                "available_tasks": available_tasks,
+                "task_id": "Не найдено"
             }
         )
     
@@ -204,8 +220,21 @@ async def validate_json_redirect(
     request: Request,
     user_file: UploadFile = File(...)
 ):
-    # Перенаправляем на страницу с заданием 1.01 по умолчанию
-    return RedirectResponse(url="/validate/1.01")
+    # Получаем список доступных заданий
+    available_tasks = get_available_tasks()
+    
+    # Если есть доступные задания, перенаправляем на первое
+    if available_tasks:
+        return RedirectResponse(url=f"/validate/{available_tasks[0]}")
+    else:
+        return templates.TemplateResponse(
+            "result.html", 
+            {
+                "request": request, 
+                "error": "Нет доступных заданий. Пожалуйста, создайте хотя бы одно задание в папке reference_json.",
+                "available_tasks": []
+            }
+        )
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2878,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": 24154.97,
+        "quantity": 3,
+        "specifications": {
+            "power": "672W",
+            "warranty": "16 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 8302,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Kingston",
+        "category": "Материнские платы",
+        "price": 29317.33,
+        "quantity": 42,
+        "specifications": {
+            "power": "212W",
+            "warranty": "22 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 8098,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 134891.94,
+        "quantity": 24,
+        "specifications": {
+            "power": "375W",
+            "warranty": "17 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

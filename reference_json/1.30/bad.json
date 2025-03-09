@@ -1,0 +1,59 @@
+[
+    {
+        "id": 3339,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 109427.42,
+        "quantity": 22,
+        "specifications": {
+            "power": "267W",
+            "warranty": "14 месяцев",
+            "year": 2023
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 1727,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 88924.7,
+        "quantity": 7,
+        "specifications": {
+            "power": "326W",
+            "warranty": "26 месяцев",
+            "year": 2022
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 3674,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": 102366.32,
+        "quantity": 5,
+        "specifications": {
+            "power": "160W",
+            "warranty": "31 месяцев",
+            "year": 2023
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 9652,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 68533.39,
+        "quantity": 5,
+        "specifications": {
+            "power": "619W",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

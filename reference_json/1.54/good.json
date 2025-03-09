@@ -1,0 +1,72 @@
+[
+    {
+        "id": 9507,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": 91237.99,
+        "quantity": 1,
+        "specifications": {
+            "power": "605W",
+            "warranty": "34 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 2254,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Gigabyte",
+        "category": "Материнские платы",
+        "price": 109918.11,
+        "quantity": 67,
+        "specifications": {
+            "power": "930W",
+            "warranty": "31 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 3033,
+        "name": "Блок питания Corsair",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 143653.71,
+        "quantity": 9,
+        "specifications": {
+            "power": "472W",
+            "warranty": "17 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 5064,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 7764.17,
+        "quantity": 15,
+        "specifications": {
+            "power": "621W",
+            "warranty": "12 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 4644,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 72489.16,
+        "quantity": 86,
+        "specifications": {
+            "power": "640W",
+            "warranty": "34 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    }
+]

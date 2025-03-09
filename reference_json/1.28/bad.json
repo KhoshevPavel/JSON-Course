@@ -1,0 +1,60 @@
+[
+    {
+        "id": 9847,
+        "name": "Блок питания Corsair",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 70606.56,
+        "quantity": 51,
+        "specifications": {
+            "power": "718W",
+            "warranty": "31 месяцев",
+            "year": 2022
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 8156,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Накопители",
+        "price": 85512.01,
+        "quantity": 9,
+        "specifications": {
+            "power": "430W",
+            "warranty": "22 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 1036,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": "71213.43 руб",
+        "quantity": 10,
+        "specifications": {
+            "power": "168W",
+            "warranty": "24 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 6526,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 113190.79,
+        "quantity": 63,
+        "specifications": {
+            "power": "372W",
+            "warranty": "25 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

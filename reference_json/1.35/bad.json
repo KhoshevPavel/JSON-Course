@@ -1,0 +1,58 @@
+[
+    {
+        "id": 2902,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "NVIDIA",
+        "category": "Процессоры",
+        "price": 38803.51,
+        "quantity": 18,
+        "specifications": {
+            "power": "300W",
+            "warranty": "15 месяцев",
+            "year": 2022
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 2724,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 37746.5,
+        "quantity": 46,
+        "specifications": {
+            "power": "155W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 4911,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Corsair",
+        "category": "Материнские платы",
+        "price": 114762.02,
+        "quantity": 78,
+        "specifications": {
+            "power": "524W",
+            "warranty": "22 месяцев",
+            "year": 2020
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 6359,
+        "name": "Блок питания Corsair",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 70121.32,
+        "quantity": 33,
+        "specifications": {
+            "power": "713W",
+            "warranty": "26 месяцев",
+            "year": 2021
+        },
+        "is_available": "no"
+    }
+]

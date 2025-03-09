@@ -1,0 +1,100 @@
+[
+    {
+        "id": 7696,
+        "name": "SSD Samsung",
+        "manufacturer": "Kingston",
+        "category": "Материнские платы",
+        "price": 141710.99,
+        "quantity": 92,
+        "specifications": {
+            "power": "508W",
+            "warranty": "25 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 5001,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Gigabyte",
+        "category": "Память",
+        "price": 102211.71,
+        "quantity": 97,
+        "specifications": {
+            "power": "787W",
+            "warranty": "30 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1103,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 100127.92,
+        "quantity": 2,
+        "specifications": {
+            "power": "530W",
+            "warranty": "29 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 5097,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 132962.74,
+        "quantity": 54,
+        "specifications": {
+            "power": "338W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 3422,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "ASUS",
+        "category": "Память",
+        "price": 53510.48,
+        "quantity": 20,
+        "specifications": {
+            "power": "400W",
+            "warranty": "21 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 7760,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Материнские платы",
+        "price": 62216.14,
+        "quantity": 60,
+        "specifications": {
+            "power": "361W",
+            "warranty": "31 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 1673,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 99465.78,
+        "quantity": 1,
+        "specifications": {
+            "power": "439W",
+            "warranty": "25 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

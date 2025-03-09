@@ -1,0 +1,58 @@
+[
+    {
+        "id": 3614,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 51733.37,
+        "quantity": 9,
+        "specifications": {
+            "power": "944W",
+            "warranty": "14 месяцев",
+            "year": 2021
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 7774,
+        "name": "SSD Samsung",
+        "manufacturer": "AMD",
+        "category": "Материнские платы",
+        "price": 112828.97,
+        "quantity": 85,
+        "specifications": {
+            "power": "344W",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 2811,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 116136.44,
+        "quantity": 95,
+        "specifications": {
+            "power": "397W",
+            "warranty": "34 месяцев",
+            "year": 2022
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 5471,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 59149.87,
+        "quantity": 84,
+        "specifications": {
+            "power": "330W",
+            "year": 2020
+        },
+        "is_available": false
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1224,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": 78225.03,
+        "quantity": 98,
+        "specifications": {
+            "power": "761W",
+            "warranty": "28 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 9103,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 122851.28,
+        "quantity": 36,
+        "specifications": {
+            "power": "679W",
+            "warranty": "12 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 3927,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 146208.46,
+        "quantity": 20,
+        "specifications": {
+            "power": "913W",
+            "warranty": "21 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 8997,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 76333.61,
+        "quantity": 26,
+        "specifications": {
+            "power": "666W",
+            "warranty": "18 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 9182,
+        "name": "SSD Samsung",
+        "manufacturer": "Intel",
+        "category": "Материнские платы",
+        "price": 39368.5,
+        "quantity": 1,
+        "specifications": {
+            "power": "280W",
+            "warranty": "28 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    }
+]

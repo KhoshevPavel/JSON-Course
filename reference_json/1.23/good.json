@@ -1,0 +1,72 @@
+[
+    {
+        "id": 8335,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 142173.76,
+        "quantity": 54,
+        "specifications": {
+            "power": "599W",
+            "warranty": "34 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 8280,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 114871.22,
+        "quantity": 82,
+        "specifications": {
+            "power": "619W",
+            "warranty": "31 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 8720,
+        "name": "Оперативная память Kingston",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": 64398.21,
+        "quantity": 63,
+        "specifications": {
+            "power": "131W",
+            "warranty": "36 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 1517,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "MSI",
+        "category": "Видеокарты",
+        "price": 74197.2,
+        "quantity": 82,
+        "specifications": {
+            "power": "466W",
+            "warranty": "25 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 7056,
+        "name": "SSD Samsung",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": 62561.21,
+        "quantity": 13,
+        "specifications": {
+            "power": "743W",
+            "warranty": "12 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 9179,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Накопители",
+        "price": 42171.57,
+        "quantity": 2,
+        "specifications": {
+            "power": "536W",
+            "warranty": "21 месяцев",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 6247,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 33090.58,
+        "quantity": 37,
+        "specifications": {
+            "power": "253W",
+            "warranty": "13 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 7685,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Gigabyte",
+        "category": "Память",
+        "price": 97297.6,
+        "quantity": 42,
+        "specifications": {
+            "power": "542W",
+            "warranty": "23 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 5487,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "MSI",
+        "category": "Накопители",
+        "price": 124396.86,
+        "quantity": 93,
+        "specifications": {
+            "power": "555W",
+            "warranty": "18 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

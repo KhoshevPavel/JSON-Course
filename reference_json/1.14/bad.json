@@ -1,0 +1,74 @@
+[
+    {
+        "id": 8287,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 85900.15,
+        "quantity": 16,
+        "specifications": {
+            "power": "412W",
+            "warranty": "20 месяцев",
+            "year": 2023
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 4892,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": 103329.87,
+        "quantity": 74,
+        "specifications": {
+            "power": "608W",
+            "warranty": "35 месяцев",
+            "year": 2024
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 2784,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Corsair",
+        "category": "Блоки питания",
+        "price": "27874.58 руб",
+        "quantity": 55,
+        "specifications": {
+            "power": "129W",
+            "warranty": "15 месяцев",
+            "year": 2024
+        },
+        "is_available": false
+    },
+    {
+        "id": 6721,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Gigabyte",
+        "category": "Видеокарты",
+        "price": "33697.99 руб",
+        "quantity": 76,
+        "specifications": {
+            "power": "768W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": true
+    },
+    {
+        "id": 6843,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Материнские платы",
+        "price": 51464.85,
+        "quantity": 50,
+        "specifications": {
+            "power": "434W",
+            "warranty": "25 месяцев",
+            "year": 2024
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    }
+]

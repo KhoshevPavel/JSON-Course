@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1548,
+        "name": "Корпус Deepcool",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 99302.19,
+        "quantity": 3,
+        "specifications": {
+            "power": "262W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 7930,
+        "name": "Корпус Deepcool",
+        "manufacturer": "ASUS",
+        "category": "Процессоры",
+        "price": 81235.65,
+        "quantity": 5,
+        "specifications": {
+            "power": "461W",
+            "warranty": "32 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 6485,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Память",
+        "price": 91936.16,
+        "quantity": 10,
+        "specifications": {
+            "power": "898W",
+            "warranty": "32 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 8861,
+        "name": "SSD Samsung",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 85608.93,
+        "quantity": 97,
+        "specifications": {
+            "power": "823W",
+            "warranty": "22 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    }
+]

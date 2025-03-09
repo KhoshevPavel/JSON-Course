@@ -1,0 +1,44 @@
+[
+    {
+        "id": 5888,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "ASUS",
+        "category": "Накопители",
+        "price": 12330.81,
+        "quantity": 7,
+        "specifications": {
+            "power": "817W",
+            "warranty": "34 месяцев",
+            "year": 2023
+        },
+        "is_available": "no"
+    },
+    {
+        "id": 8911,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "MSI",
+        "category": "Память",
+        "price": "73731.14 руб",
+        "quantity": 87,
+        "specifications": {
+            "power": "451W",
+            "warranty": "14 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 9109,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 30393.81,
+        "quantity": 34,
+        "specifications": {
+            "power": "381W",
+            "warranty": "32 месяцев",
+            "year": 2022
+        },
+        "is_available": "no"
+    }
+]

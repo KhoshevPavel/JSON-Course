@@ -1,0 +1,43 @@
+[
+    {
+        "id": 8287,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": 62916.06,
+        "quantity": 62,
+        "specifications": {
+            "power": "671W",
+            "warranty": "27 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 8705,
+        "name": "Корпус Deepcool",
+        "manufacturer": "AMD",
+        "category": "Процессоры",
+        "price": 148988.65,
+        "quantity": 41,
+        "specifications": {
+            "power": "760W",
+            "year": 2020
+        },
+        "is_available": false
+    },
+    {
+        "id": 1556,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "AMD",
+        "category": "Материнские платы",
+        "price": 6212.97,
+        "quantity": 4,
+        "specifications": {
+            "power": "864W",
+            "warranty": "20 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    }
+]

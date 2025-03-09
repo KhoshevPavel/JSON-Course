@@ -1,0 +1,98 @@
+[
+    {
+        "id": 5599,
+        "name": "Материнская плата ASUS",
+        "manufacturer": "Kingston",
+        "category": "Блоки питания",
+        "price": 3769.39,
+        "quantity": 86,
+        "specifications": {
+            "power": "242W",
+            "warranty": "12 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 7957,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 148969.87,
+        "quantity": 46,
+        "specifications": {
+            "power": "659W",
+            "warranty": "27 месяцев",
+            "year": 2020
+        },
+        "is_available": true
+    },
+    {
+        "id": 9892,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Intel",
+        "category": "Видеокарты",
+        "price": 135341.32,
+        "quantity": 98,
+        "specifications": {
+            "power": "824W",
+            "warranty": "23 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 8127,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Память",
+        "price": 112524.46,
+        "quantity": 44,
+        "specifications": {
+            "power": "283W",
+            "warranty": "31 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 9391,
+        "name": "SSD Samsung",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 114359.7,
+        "quantity": 31,
+        "specifications": {
+            "power": "390W",
+            "warranty": "21 месяцев",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 5849,
+        "name": "Блок питания Corsair",
+        "manufacturer": "Gigabyte",
+        "category": "Память",
+        "price": 108604.48,
+        "quantity": 49,
+        "specifications": {
+            "power": "618W",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 5831,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "Intel",
+        "category": "Блоки питания",
+        "price": 119807.09,
+        "quantity": 72,
+        "specifications": {
+            "power": "669W",
+            "year": 2024
+        },
+        "is_available": false
+    }
+]

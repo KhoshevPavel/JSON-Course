@@ -1,0 +1,75 @@
+[
+    {
+        "id": 9813,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Блоки питания",
+        "price": 78329.8,
+        "quantity": 31,
+        "specifications": {
+            "power": "366W",
+            "year": 2021
+        },
+        "is_available": true
+    },
+    {
+        "id": 1421,
+        "name": "Корпус Deepcool",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 115908.59,
+        "quantity": 57,
+        "specifications": {
+            "power": "268W",
+            "warranty": "15 месяцев",
+            "year": 2020
+        },
+        "is_available": false,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 9274,
+        "name": "Блок питания Corsair",
+        "manufacturer": "ASUS",
+        "category": "Видеокарты",
+        "price": 127435.6,
+        "quantity": 27,
+        "specifications": {
+            "power": "530W",
+            "warranty": "32 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 7141,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 128714.41,
+        "quantity": 86,
+        "specifications": {
+            "power": "788W",
+            "warranty": "20 месяцев",
+            "year": 2024
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    },
+    {
+        "id": 1632,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Kingston",
+        "category": "Видеокарты",
+        "price": 139925.52,
+        "quantity": 48,
+        "specifications": {
+            "power": "395W",
+            "warranty": "25 месяцев",
+            "year": 2020
+        },
+        "is_available": true,
+        "invalid_field": "некорректные данные"
+    }
+]

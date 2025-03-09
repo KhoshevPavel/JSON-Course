@@ -1,0 +1,99 @@
+[
+    {
+        "id": 6267,
+        "name": "SSD Samsung",
+        "manufacturer": "Intel",
+        "category": "Материнские платы",
+        "price": 119755.51,
+        "quantity": 37,
+        "specifications": {
+            "power": "345W",
+            "warranty": "33 месяцев",
+            "year": 2023
+        },
+        "is_available": true
+    },
+    {
+        "id": 4350,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "NVIDIA",
+        "category": "Накопители",
+        "price": 66661.09,
+        "quantity": 73,
+        "specifications": {
+            "power": "443W",
+            "warranty": "16 месяцев",
+            "year": 2022
+        },
+        "is_available": true
+    },
+    {
+        "id": 6002,
+        "name": "Видеокарта NVIDIA RTX 3060",
+        "manufacturer": "Gigabyte",
+        "category": "Блоки питания",
+        "price": 77618.46,
+        "quantity": 15,
+        "specifications": {
+            "power": "731W",
+            "warranty": "12 месяцев",
+            "year": 2023
+        },
+        "is_available": false
+    },
+    {
+        "id": 8716,
+        "name": "Термопаста Arctic Silver",
+        "manufacturer": "AMD",
+        "category": "Память",
+        "price": 121220.35,
+        "quantity": 58,
+        "specifications": {
+            "power": "206W",
+            "warranty": "36 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 1869,
+        "name": "Кулер CPU Arctic",
+        "manufacturer": "Corsair",
+        "category": "Видеокарты",
+        "price": 83358.06,
+        "quantity": 25,
+        "specifications": {
+            "power": "196W",
+            "warranty": "23 месяцев",
+            "year": 2022
+        },
+        "is_available": false
+    },
+    {
+        "id": 2565,
+        "name": "SSD Samsung",
+        "manufacturer": "Corsair",
+        "category": "Процессоры",
+        "price": 93621.33,
+        "quantity": 56,
+        "specifications": {
+            "power": "910W",
+            "year": 2021
+        },
+        "is_available": false
+    },
+    {
+        "id": 3063,
+        "name": "Процессор Intel Core i5",
+        "manufacturer": "NVIDIA",
+        "category": "Блоки питания",
+        "price": 144454.47,
+        "quantity": 18,
+        "specifications": {
+            "power": "448W",
+            "warranty": "15 месяцев",
+            "year": 2020
+        },
+        "is_available": false
+    }
+]
